@@ -1,188 +1,108 @@
-# Art Scope Enterprises Limited - Website
+# Art Scope Enterprises Limited - Official Website
 
-A modern, responsive website for Art Scope Enterprises Limited built with Next.js 13+ App Router, JavaScript, and Tailwind CSS.
+A modern, fully responsive website for Art Scope Enterprises Limited, based in Kitwe, Zambia. This website showcases the company's operations, subsidiaries, events, and services with a professional design using the company's brand colors.
 
-## 🎨 About Art Scope Enterprises
+## 🎨 Design Features
 
-**Tagline:** "Empowering Artists and Creatives"
+- **Brand Colors**: Dark Navy Blue (#000f3d) and Yellow (#FFD700)
+- **Fully Responsive**: Mobile-first design that works on all devices
+- **Modern UI**: Clean, professional interface with smooth animations
+- **Accessibility**: High contrast colors and accessible navigation
 
-**Vision:** Leading African hub for creative innovation, youth empowerment, and sustainable entrepreneurship.
+## 🏢 Company Information
 
-**Mission:** Unleashing creative potential for sustainable development by promoting the integration of arts, culture, technology, and business through inclusive platforms, strategic partnerships, and innovative enterprise.
+**Art Scope Enterprises Limited**
+- **Location**: Jambo Drive Riverside, Kitwe, Zambia
+- **Phone**: +260 97 3577060
+- **Email**: info@artscope.co.zm
+- **Services**: Creative innovation, youth empowerment, and sustainable entrepreneurship
 
-## 🚀 Features
+## 🚀 Technology Stack
 
-- **Modern Design:** Clean, professional design with Art Scope's brand colors (Dark Navy Blue #000f3d and Yellow #FFD700)
-- **Fully Responsive:** Optimized for all device sizes from mobile to desktop
-- **Next.js 13+ App Router:** Using the latest Next.js features with JavaScript (JSX)
-- **Tailwind CSS:** Custom color palette and utility-first styling
-- **SEO Optimized:** Proper metadata and semantic HTML structure
-- **Reusable Components:** Header, Footer, HeroSection, SubsidiaryCard, EventCard, ContactForm
+- **Framework**: Next.js 13+ with App Router
+- **Styling**: Tailwind CSS
+- **Language**: JavaScript/JSX
+- **Font**: Inter (Google Fonts)
+- **Icons**: Heroicons & Custom SVGs
 
-## 📁 Project Structure
+## 📱 Pages Included
 
+1. **Home** - Company overview and hero section
+2. **About** - Company history, mission, and vision
+3. **Operations** - Subsidiary companies and services
+4. **Events & News** - Latest company events and announcements
+5. **Media** - Photo gallery, videos, and press releases
+6. **Partners & Investors** - Strategic partnerships and investment information
+7. **Contact** - Contact form and company information
+8. **Subsidiary Details** - Individual pages for each subsidiary
+
+## 🛠️ Installation & Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/art-scope-website.git
+   cd art-scope-website
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser:**
+   Navigate to `http://localhost:3000`
+
+## 📦 Build for Production
+
+```bash
+npm run build
+npm start
 ```
-src/
-├── app/                    # Next.js 13+ App Router pages
-│   ├── about/             # About page
-│   ├── contact/           # Contact page
-│   ├── events/            # Events & News page
-│   ├── media/             # Media center page
-│   ├── operations/        # Operations overview page
-│   ├── partners/          # Partners & Investors page
-│   ├── subsidiary/        # Dynamic subsidiary detail pages
-│   │   └── [slug]/        # Individual subsidiary pages
-│   ├── layout.js          # Root layout component
-│   ├── page.js            # Homepage
-│   └── globals.css        # Global styles with custom Tailwind theme
-├── components/            # Reusable React components
-│   ├── Header.js          # Navigation header
-│   ├── Footer.js          # Site footer
-│   ├── HeroSection.js     # Homepage hero section
-│   ├── SubsidiaryCard.js  # Business unit cards
-│   ├── EventCard.js       # Event/news cards
-│   └── ContactForm.js     # Contact form
-└── ...
-```
+
+## 🎯 Key Components
+
+- **Header**: Navigation with company logo
+- **Footer**: Contact information and links
+- **HeroSection**: Reusable hero components
+- **SubsidiaryCard**: Cards for subsidiary companies
+- **EventCard**: Cards for events and news
+- **ContactForm**: Contact form with validation
 
 ## 🎨 Brand Guidelines
 
-### Colors
-- **Dark Navy Blue:** `#000f3d` (backgrounds)
-- **Yellow:** `#FFD700` (accents, buttons, CTAs)
-- **White:** `#ffffff` (text on dark backgrounds)
-- **Light Gray:** `#cccccc` (secondary text)
+The website strictly uses only the company's brand colors:
+- **Primary**: Dark Navy Blue (#000f3d)
+- **Secondary**: Yellow (#FFD700)
+- **No white or gray backgrounds** for better brand consistency
 
-### Typography
-- **Font:** Inter (Google Fonts)
-- **Headings:** Bold, Navy Blue
-- **Body Text:** Regular, Dark Gray on light backgrounds, Light Gray on dark backgrounds
+## 📸 Images & Media
 
-## 🛠️ Getting Started
+- Company logo: `/public/images/logo.jpg`
+- All images should be placed in `/public/images/`
+- Optimized for web performance
 
-### Prerequisites
-- Node.js 18+ 
-- npm, yarn, pnpm, or bun
+## 🌐 Deployment
 
-### Installation
-
-1. **Clone or download the project**
-```bash
-# If using git
-git clone [repository-url]
-cd art-scope-website
-
-# Or download and extract the project folder
-```
-
-2. **Install dependencies**
-```bash
-npm install
-# or
-yarn install
-# or
-pnpm install
-```
-
-3. **Run the development server**
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-4. **Open your browser**
-Navigate to [http://localhost:3000](http://localhost:3000) to see the website.
-
-### Available Scripts
-
-- `npm run dev` - Start development server with Turbopack
-- `npm run build` - Build the application for production
-- `npm run start` - Start the production server
-- `npm run lint` - Run ESLint for code quality
-
-## 📱 Pages Overview
-
-1. **Homepage (`/`)** - Hero section, operations overview, recent events, call-to-action
-2. **About (`/about`)** - Company story, mission, vision, values, and leadership team
-3. **Operations (`/operations`)** - Overview of all subsidiaries and business units
-4. **Events & News (`/events`)** - Latest events, announcements, and company news
-5. **Media (`/media`)** - Media center with videos, photos, press releases, and downloads
-6. **Partners & Investors (`/partners`)** - Strategic partnerships and investment information
-7. **Contact (`/contact`)** - Contact form, office information, business hours
-8. **Subsidiary Detail (`/subsidiary/[slug]`)** - Dynamic pages for individual subsidiary details
-
-## 🎯 Business Units
-
-The website showcases Art Scope's four main business units:
-
-1. **Creative Studio** - Graphic design, branding, digital marketing, content creation
-2. **Youth Empowerment Programs** - Training, mentorship, entrepreneurship bootcamps
-3. **Technology Innovation Hub** - Software development, digital transformation, tech training
-4. **Business Consulting** - Strategic planning, market research, financial consulting
-
-## 🚀 Deployment
-
-### Deploy to Vercel (Recommended)
-
-1. **Push to GitHub** (if using Git)
-2. **Connect to Vercel:**
-   - Go to [vercel.com](https://vercel.com)
-   - Import your repository
-   - Deploy with default settings
-
-3. **Manual Deploy:**
-```bash
-npm run build
-# Upload the .next folder and other necessary files to your hosting provider
-```
-
-### Deploy to Other Platforms
-
-The project can be deployed to any platform that supports Node.js:
+This website is ready for deployment on:
+- Vercel (recommended for Next.js)
 - Netlify
-- AWS Amplify
-- Google Cloud Platform
-- DigitalOcean App Platform
-- Railway
-- Render
+- Any hosting service that supports Node.js
 
-## 🔧 Customization
+## 📞 Contact
 
-### Adding New Pages
-1. Create a new folder in `src/app/`
-2. Add a `page.js` file with your React component
-3. Update navigation in `src/components/Header.js`
+For technical support or questions about this website:
+- **Developer**: Gershom Chomba
+- **Portfolio**: [gershom-chomba-portfolio.vercel.app](https://gershom-chomba-portfolio.vercel.app/)
 
-### Updating Brand Colors
-Modify the CSS variables in `src/app/globals.css`:
-```css
-:root {
-  --navy: #000f3d;
-  --yellow: #FFD700;
-  /* Add your custom colors */
-}
-```
+## 📄 License
 
-### Adding Components
-Create new components in `src/components/` and import them where needed.
-
-## 📞 Support
-
-For questions or support regarding this website, please contact:
-- **Email:** info@artscope.co.zm
-- **Phone:** +255 123 456 789
+© 2024 Art Scope Enterprises Limited. All rights reserved.
 
 ---
 
-**Art Scope Enterprises Limited** - Empowering Artists and Creatives
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Built with ❤️ in Zambia**

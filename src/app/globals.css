@@ -536,3 +536,133 @@ section[class*="bg-white"] div:not(.text-yellow):not(.text-navy):not(.text-white
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+/* Scroll Animation Classes */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-animate-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-animate-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-animate-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-animate-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-animate-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-animate-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.scroll-animate-fade {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-animate-fade.visible {
+  opacity: 1;
+}
+
+/* Staggered animation delays */
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+.stagger-6 { transition-delay: 0.6s; }
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-animate,
+  .scroll-animate-left,
+  .scroll-animate-right,
+  .scroll-animate-scale,
+  .scroll-animate-fade {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Mobile menu animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-menu-item {
+  animation: fadeInUp 0.3s ease-out forwards;
+  opacity: 0;
+}
+
+/* Ensure hamburger menu is always visible on mobile only */
+.hamburger-button {
+  min-height: 48px !important;
+  min-width: 48px !important;
+  background-color: #FFD700 !important;
+  border: 2px solid #000f3d !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Hide hamburger menu on large screens */
+@media (min-width: 1024px) {
+  .hamburger-button {
+    display: none !important;
+  }
+}
+
+.hamburger-button:hover {
+  background-color: #e6c200 !important;
+  transform: scale(1.05) !important;
+}
+
+.hamburger-line {
+  background-color: #000f3d !important;
+  height: 3px !important;
+  width: 20px !important;
+  display: block !important;
+  border-radius: 2px !important;
+  opacity: 1 !important;
+}
+
+/* Mobile menu backdrop */
+.mobile-menu-backdrop {
+  backdrop-filter: blur(4px);
+}

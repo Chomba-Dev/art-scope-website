@@ -1,3 +1,5 @@
+import ScrollReveal from "@/components/ScrollReveal";
+
 export const metadata = {
   title: "About Us - Art Scope Enterprises Limited",
   description: "Learn about our mission, vision, and commitment to empowering artists and creatives across Africa through innovation and sustainable entrepreneurship.",
@@ -148,22 +150,26 @@ export default function About() {
       {/* Core Values */}
       <section className="py-20 bg-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-yellow mb-6">Our Core Values</h2>
-            <p className="text-xl text-yellow max-w-3xl mx-auto">
-              These fundamental principles guide our decisions, shape our culture, and drive our commitment to excellence.
-            </p>
-          </div>
+          <ScrollReveal animation="up">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-yellow mb-6">Our Core Values</h2>
+              <p className="text-xl text-yellow max-w-3xl mx-auto">
+                These fundamental principles guide our decisions, shape our culture, and drive our commitment to excellence.
+              </p>
+            </div>
+          </ScrollReveal>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {coreValues.map((value, index) => (
-              <div key={index} className="card-primary bg-yellow p-8 text-center card-hover group">
-                <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {value.icon}
+              <ScrollReveal key={index} animation="up" delay={Math.floor(index / 3) + 1}>
+                <div className="card-primary bg-yellow p-8 text-center card-hover group">
+                  <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                    {value.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold text-navy mb-4">{value.name}</h3>
+                  <p className="text-navy font-medium leading-relaxed">{value.description}</p>
                 </div>
-                <h3 className="text-2xl font-bold text-navy mb-4">{value.name}</h3>
-                <p className="text-navy font-medium leading-relaxed">{value.description}</p>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>

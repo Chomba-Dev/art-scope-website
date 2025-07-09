@@ -53,29 +53,43 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Fixed Animation */}
           <button
-            className="lg:hidden w-10 h-10 flex flex-col justify-center items-center bg-white/10 rounded-lg hover:bg-white/20 transition-colors duration-200 flex-shrink-0"
+            className="lg:hidden w-12 h-12 flex flex-col justify-center items-center bg-yellow/20 rounded-xl hover:bg-yellow/30 transition-all duration-200 flex-shrink-0 relative focus:outline-none focus:ring-2 focus:ring-yellow/50 group"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle mobile menu"
+            aria-expanded={isMenuOpen}
           >
-            <span className={`w-5 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
-            <span className={`w-5 h-0.5 bg-white transition-all duration-300 my-1 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
-            <span className={`w-5 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+            <div className="relative w-6 h-5 flex flex-col justify-center space-y-1">
+              <span className={`block w-6 h-0.5 bg-yellow transition-all duration-300 ease-in-out transform origin-center ${
+                isMenuOpen ? 'rotate-45 translate-y-2' : 'rotate-0 translate-y-0'
+              }`}></span>
+              <span className={`block w-6 h-0.5 bg-yellow transition-all duration-300 ease-in-out ${
+                isMenuOpen ? 'opacity-0 scale-0' : 'opacity-100 scale-100'
+              }`}></span>
+              <span className={`block w-6 h-0.5 bg-yellow transition-all duration-300 ease-in-out transform origin-center ${
+                isMenuOpen ? '-rotate-45 -translate-y-2' : 'rotate-0 translate-y-0'
+              }`}></span>
+            </div>
           </button>
         </div>
 
-        {/* Mobile Navigation */}
-        <div className={`lg:hidden transition-all duration-300 overflow-hidden ${isMenuOpen ? 'max-h-96 pb-4' : 'max-h-0'}`}>
-          <nav className="flex flex-col space-y-2 border-t border-white/20 pt-4">
-            {navLinks.map((link) => (
+        {/* Enhanced Mobile Navigation */}
+        <div className={`lg:hidden absolute top-full left-0 right-0 z-50 transition-all duration-500 ease-in-out overflow-hidden bg-navy shadow-2xl ${isMenuOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
+          <nav className="flex flex-col space-y-1 border-t border-yellow/30 pt-6 pb-6 px-4">
+            {navLinks.map((link, index) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-white hover:text-yellow hover:bg-white/10 transition-all duration-200 font-medium py-3 px-4 rounded-lg"
+                className="text-white hover:text-yellow hover:bg-yellow/10 transition-all duration-300 font-medium py-4 px-6 rounded-xl mx-2 flex items-center space-x-3 group animate-fade-in-up"
                 onClick={() => setIsMenuOpen(false)}
+                style={{ animationDelay: `${index * 50}ms` }}
               >
-                {link.label}
+                <div className="w-2 h-2 bg-yellow rounded-full group-hover:scale-150 transition-transform duration-300"></div>
+                <span>{link.label}</span>
+                <svg className="w-4 h-4 ml-auto group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                </svg>
               </Link>
             ))}
           </nav>

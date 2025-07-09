@@ -121,7 +121,7 @@ export default function Footer() {
             </div>
             <div className="text-center md:text-left">
               <h5 className="font-semibold text-yellow mb-2">Location</h5>
-              <p className="text-gray">Jambo Drive Riverside, Kitwe, Zambia</p>
+              <p className="text-gray">Plot No. 1132, Olipa Banda, Kanyama Site and Service, Lusaka, Zambia</p>
             </div>
           </div>
 

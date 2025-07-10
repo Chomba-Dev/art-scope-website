@@ -71,9 +71,9 @@ const mediaItems = [
 
 const pressReleases = [
   {
-    title: "Art Scope Announces $100M Investment...", // UPDATE with real press releases
-    date: "March 1, 2024",                           // UPDATE with real dates
-    excerpt: "Major investment initiative..."         // UPDATE with real content
+    title: "Art Scope Announces ZMW 20M Investment...", // UPDATE with real press releases
+    date: "March 1, 2024",                              // UPDATE with real dates
+    excerpt: "Major investment initiative..."            // UPDATE with real content
   }
 ];
 ```
@@ -93,7 +93,7 @@ const strategicPartners = [
 const keyInvestors = [
   {
     name: "Global Infrastructure Fund",   // UPDATE with real investors (if applicable)
-    investment: "$150M",                  // UPDATE with real amounts (if public)
+    investment: "ZMW 3M",                 // UPDATE with real amounts (if public)
     focus: "Infrastructure & Energy"      // UPDATE with real focus areas
   }
 ];
@@ -104,19 +104,19 @@ const keyInvestors = [
 ### Operations Page (Lines 89-105):
 ```javascript
 // UPDATE these numbers with real company stats:
-<div className="text-4xl font-bold text-navy mb-2">6</div>          // Real business units
-<div className="text-4xl font-bold text-navy mb-2">500+</div>       // Real projects completed
-<div className="text-4xl font-bold text-navy mb-2">50+</div>        // Real countries/regions served
-<div className="text-4xl font-bold text-navy mb-2">15</div>         // Real years in business
+<div className="text-4xl font-bold text-navy mb-2">10</div>         // Real business units (subsidiaries)
+<div className="text-4xl font-bold text-navy mb-2">50+</div>        // Real projects completed
+<div className="text-4xl font-bold text-navy mb-2">1</div>          // Real countries/regions served (Zambia)
+<div className="text-4xl font-bold text-navy mb-2">1</div>          // Real years in business (since Aug 2024)
 ```
 
 ### Partners Page (Lines 230-250):
 ```javascript
 // UPDATE with real investment/performance data:
-<div className="text-4xl font-bold text-navy mb-2">$500M+</div>     // Real investment raised
+<div className="text-4xl font-bold text-navy mb-2">ZMW 10M+</div>   // Real investment target
 <div className="text-4xl font-bold text-navy mb-2">25%</div>        // Real returns (if applicable)
-<div className="text-4xl font-bold text-navy mb-2">50+</div>        // Real number of partners
-<div className="text-4xl font-bold text-navy mb-2">15</div>         // Real years track record
+<div className="text-4xl font-bold text-navy mb-2">6</div>          // Real number of partner categories
+<div className="text-4xl font-bold text-navy mb-2">1</div>          // Real years track record (since 2024)
 ```
 
 ## 📍 **Location References to Update:**

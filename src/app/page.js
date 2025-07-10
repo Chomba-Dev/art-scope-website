@@ -6,78 +6,102 @@ import ScrollReveal from "@/components/ScrollReveal";
 function Home() {
   const subsidiaries = [
     {
-      title: "Creative Studio",
-      description: "Professional creative services including graphic design, branding, digital marketing, and content creation for businesses and organizations.",
-      icon: "CS",
-      href: "/operations/creative-studio",
+      title: "Art Scope Arts",
+      description: "Music, Dance, Theater, Fashion & Design, Events Management, Modeling, Literary Arts, Authorship & Publishing, Graphics & Animation.",
+      icon: "AA",
+      href: "/subsidiary/art-scope-arts",
       features: [
-        "Brand identity development",
-        "Digital marketing campaigns", 
-        "Content creation and strategy",
-        "Website design and development"
+        "Music & Dance Productions",
+        "Theater & Fashion Design", 
+        "Events Management & Modeling",
+        "Publishing & Animation"
       ]
     },
     {
-      title: "Youth Empowerment Programs",
-      description: "Comprehensive training and mentorship programs designed to equip young people with creative and entrepreneurial skills.",
-      icon: "YE",
-      href: "/operations/youth-programs",
+      title: "Art Scope Farms",
+      description: "Organic agriculture, smart farming, and food security initiatives promoting sustainable agricultural practices.",
+      icon: "AF",
+      href: "/subsidiary/art-scope-farms",
       features: [
-        "Skills training workshops",
+        "Organic agriculture",
+        "Smart farming techniques",
+        "Food security initiatives",
+        "Sustainable farming practices"
+      ]
+    },
+    {
+      title: "Art Scope Tech Innovations",
+      description: "AI-driven art, digital solutions, automation systems, and solar technology for creative and sustainable innovation.",
+      icon: "TI",
+      href: "/subsidiary/art-scope-tech",
+      features: [
+        "AI-driven art solutions",
+        "Digital transformation",
+        "Automation systems",
+        "Solar technology"
+      ]
+    },
+    {
+      title: "Art Scope Schools",
+      description: "Art-focused education, talent development, and mentorship programs for creative skill development.",
+      icon: "AS",
+      href: "/subsidiary/art-scope-schools",
+      features: [
+        "Art-focused education",
+        "Talent development",
         "Mentorship programs",
-        "Entrepreneurship bootcamps",
-        "Creative leadership development"
+        "Creative skill training"
       ]
     },
     {
-      title: "Technology Innovation Hub",
-      description: "Cutting-edge technology solutions and digital transformation services to help businesses leverage modern technology.",
-      icon: "TH",
-      href: "/operations/technology-hub",
+      title: "Art Scope Supplies",
+      description: "Distribution of essential goods, branding materials, and merchandising for creative and business needs.",
+      icon: "SP",
+      href: "/subsidiary/art-scope-supplies",
       features: [
-        "Software development",
-        "Digital transformation consulting",
-        "Tech training programs",
-        "Innovation incubation"
+        "Essential goods distribution",
+        "Branding materials",
+        "Creative merchandising",
+        "Supply chain management"
       ]
     },
     {
-      title: "Business Consulting",
-      description: "Strategic business consulting services to help organizations grow, innovate, and achieve sustainable success.",
-      icon: "BC",
-      href: "/operations/consulting",
+      title: "Art Scope Tourism & Travel",
+      description: "Cultural tourism, travel packages, and creative safaris showcasing Zambian heritage and creative destinations.",
+      icon: "TT",
+      href: "/subsidiary/art-scope-tourism",
       features: [
-        "Strategic planning",
-        "Market research and analysis",
-        "Financial consulting",
-        "Operational optimization"
+        "Cultural tourism packages",
+        "Creative safaris",
+        "Heritage tours",
+        "Travel coordination"
       ]
     }
   ];
 
   const recentEvents = [
     {
-      title: "Creative Innovation Summit 2025",
-      description: "Join leading artists, entrepreneurs, and innovators for a day of inspiration, networking, and learning about the future of creative industries in Africa.",
-      date: "2025-02-15",
-      time: "9:00 AM - 6:00 PM",
-      location: "Dar es Salaam Convention Centre",
-      category: "Conference",
-      href: "/events/creative-innovation-summit-2025"
+      title: "Annual National Creative Arts Expo 2025",
+      description: "Join the premier showcase of Zambian creative talent featuring music, dance, theater, fashion, and visual arts from across the nation.",
+      date: "2025-08-15",
+      time: "9:00 AM - 8:00 PM",
+      location: "Lusaka International Conference Centre",
+      category: "Expo",
+      href: "/events/national-creative-arts-expo-2025"
     },
     {
-      title: "Youth Entrepreneurship Workshop",
-      description: "A hands-on workshop designed to teach young people the fundamentals of starting and running a successful creative business.",
-      date: "2025-01-25",
-      time: "2:00 PM - 5:00 PM", 
-      location: "Art Scope Innovation Hub",
-      category: "Workshop",
-      href: "/events/youth-entrepreneurship-workshop"
+      title: "ArtSphere Podcast Launch Event",
+      description: "Celebrate the official launch of ArtSphere Podcast, featuring discussions with leading creative professionals and innovators.",
+      date: "2025-03-20",
+      time: "6:00 PM - 9:00 PM", 
+      location: "Art Scope Creative Hub, Lusaka",
+      category: "Launch",
+      href: "/events/artsphere-podcast-launch"
     },
     {
-      title: "Art Scope Launches New Partnership Program",
-      description: "We're excited to announce our new strategic partnership initiative aimed at fostering collaboration between creative professionals and technology companies.",
-      date: "2025-01-10",
+      title: "Youth Skills Development Workshop",
+      description: "Comprehensive skills training program for young creatives focusing on entrepreneurship, digital literacy, and creative business development.",
+      date: "2025-02-10",
       author: "Art Scope Team",
       category: "News",
       type: "news",

@@ -6,98 +6,103 @@ export const metadata = {
 export default function Partners() {
   const targetPartners = [
     {
-      category: "Government Institutions",
-      description: "Collaborate with government agencies to implement youth development and creative economy initiatives.",
+      category: "Government Ministries",
+      description: "Strategic partnerships with key government ministries to implement national creative economy initiatives.",
       icon: "🏛️",
       opportunities: [
-        "Youth skills development programs",
-        "Creative economy policy implementation",
-        "Community development projects",
-        "Cultural tourism initiatives"
+        "Ministry of Youth, Sport and Arts",
+        "Ministry of Tourism and Arts", 
+        "Ministry of Education",
+        "Ministry of Agriculture and Livestock"
       ]
     },
     {
-      category: "Educational Institutions", 
-      description: "Partner with schools and universities to enhance creative education and talent development.",
+      category: "Bank of Zambia & Commercial Banks", 
+      description: "Financial partnerships for investment facilitation and economic development programs.",
+      icon: "�",
+      opportunities: [
+        "Creative economy financing",
+        "Youth entrepreneurship funding",
+        "SME development programs",
+        "Financial inclusion initiatives"
+      ]
+    },
+    {
+      category: "National Arts Council",
+      description: "Collaboration with the National Arts Council for arts development and cultural promotion.",
+      icon: "�",
+      opportunities: [
+        "Arts policy development",
+        "Creative talent development",
+        "Cultural events coordination",
+        "Artist support programs"
+      ]
+    },
+    {
+      category: "Civil Society & NGOs",
+      description: "Partnerships with NGOs and civil society organizations for community impact and development.",
+      icon: "🤝",
+      opportunities: [
+        "Community development projects",
+        "Youth empowerment programs",
+        "Social impact initiatives",
+        "Capacity building programs"
+      ]
+    },
+    {
+      category: "Media & Broadcasting Companies",
+      description: "Strategic media partnerships for content production and broadcast distribution.",
+      icon: "📺",
+      opportunities: [
+        "ArtSphere TV Show production",
+        "Podcast distribution",
+        "Digital content creation",
+        "Media awareness campaigns"
+      ]
+    },
+    {
+      category: "Educational Institutions",
+      description: "Academic partnerships for research, education, and talent development initiatives.",
       icon: "🎓",
       opportunities: [
         "Art-focused curriculum development",
         "Student mentorship programs",
-        "Creative skills training",
-        "Educational resource development"
-      ]
-    },
-    {
-      category: "Private Companies",
-      description: "Strategic business partnerships for mutual growth and community impact.",
-      icon: "🏢",
-      opportunities: [
-        "Corporate social responsibility",
-        "Employee training programs",
-        "Brand partnership campaigns",
-        "Technology integration projects"
-      ]
-    },
-    {
-      category: "NGOs & Civil Society",
-      description: "Collaborate with non-profits to amplify social impact and community development.",
-      icon: "🤝",
-      opportunities: [
-        "Community empowerment projects",
-        "Social impact initiatives",
-        "Capacity building programs",
-        "Advocacy and awareness campaigns"
-      ]
-    },
-    {
-      category: "International Organizations",
-      description: "Global partnerships for knowledge exchange and sustainable development.",
-      icon: "🌍",
-      opportunities: [
-        "Cultural exchange programs",
-        "International best practices",
-        "Global market access",
-        "Cross-border collaborations"
-      ]
-    },
-    {
-      category: "Financial Institutions",
-      description: "Investment partnerships to scale operations and maximize impact.",
-      icon: "💰",
-      opportunities: [
-        "Infrastructure development",
-        "Technology advancement",
-        "Program expansion",
-        "Financial inclusion initiatives"
+        "Research collaborations",
+        "Skills training partnerships"
       ]
     }
   ];
 
   const revenueStreams = [
     {
-      stream: "Creative Services & Production",
-      description: "Revenue from music, dance, theater, fashion, events, and multimedia content creation.",
+      stream: "Event & Ticket Sales",
+      description: "Revenue from creative events, performances, exhibitions, and ticketed experiences.",
       icon: "🎭"
     },
     {
-      stream: "Education & Training Programs",
-      description: "Income from art-focused education, skills development, and mentorship programs.",
-      icon: "🎓"
+      stream: "Digital Media Monetization",
+      description: "Income from ArtSphere Podcast, TV shows, online content, and digital platform monetization.",
+      icon: "📱"
     },
     {
-      stream: "Tourism & Cultural Experiences",
-      description: "Revenue from cultural tourism, creative safaris, and heritage experience packages.",
-      icon: "🌍"
+      stream: "Merchandise & Art Sales",
+      description: "Revenue from art sales, creative merchandise, branded materials, and artistic products.",
+      icon: "🛍️"
     },
     {
-      stream: "Technology Solutions",
-      description: "Income from AI-driven applications, digital solutions, and automation systems.",
-      icon: "💻"
+      stream: "Service Fees",
+      description: "Income from design services, marketing, production, consulting, and professional services.",
+      icon: "�"
     },
     {
-      stream: "Agriculture & Food Security",
-      description: "Revenue from sustainable farming, organic produce, and food security initiatives.",
-      icon: "🌱"
+      stream: "Brand Sponsorships",
+      description: "Revenue from corporate sponsorships, brand partnerships, and collaborative marketing initiatives.",
+      icon: "🤝"
+    },
+    {
+      stream: "Government Grants & Private Investments",
+      description: "Funding from government grants, donor partnerships, and private investment opportunities.",
+      icon: "💰"
     },
     {
       stream: "Construction & Infrastructure",

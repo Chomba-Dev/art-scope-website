@@ -12,10 +12,10 @@ export default function Footer() {
   ];
 
   const subsidiaries = [
-    { href: '/operations/creative-studio', label: 'Creative Studio' },
-    { href: '/operations/youth-programs', label: 'Youth Programs' },
-    { href: '/operations/technology-hub', label: 'Technology Hub' },
-    { href: '/operations/consulting', label: 'Business Consulting' },
+    { href: '/subsidiary/art-scope-arts', label: 'Art Scope Arts' },
+    { href: '/subsidiary/art-scope-farms', label: 'Art Scope Farms' },
+    { href: '/subsidiary/art-scope-tech', label: 'Art Scope Tech' },
+    { href: '/subsidiary/art-scope-schools', label: 'Art Scope Schools' },
   ];
 
   const socialLinks = [
@@ -109,15 +109,20 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
             <div className="text-center md:text-left">
               <h5 className="font-semibold text-yellow mb-2">Email</h5>
-              <a href="mailto:info@artscope.co.zm" className="text-gray hover:text-yellow transition-colors duration-200">
-                info@artscope.co.zm
+              <a href="mailto:prosperchilufya9@gmail.com" className="text-gray hover:text-yellow transition-colors duration-200">
+                prosperchilufya9@gmail.com
               </a>
             </div>
             <div className="text-center md:text-left">
               <h5 className="font-semibold text-yellow mb-2">Phone</h5>
-              <a href="tel:+260973577060" className="text-gray hover:text-yellow transition-colors duration-200">
-                +260 97 3577060
-              </a>
+              <div>
+                <a href="tel:+260973577060" className="text-gray hover:text-yellow transition-colors duration-200 block">
+                  +260 973 577 060
+                </a>
+                <a href="tel:+260958528660" className="text-gray hover:text-yellow transition-colors duration-200 block">
+                  +260 958 528 660
+                </a>
+              </div>
             </div>
             <div className="text-center md:text-left">
               <h5 className="font-semibold text-yellow mb-2">Location</h5>

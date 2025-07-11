@@ -43,15 +43,15 @@ export default function HeroSection() {
 
           {/* Enhanced Tagline */}
           <div className="max-w-4xl mx-auto">
-            <p className="text-xl sm:text-2xl text-yellow font-bold mb-4 leading-relaxed">
+            <p className="text-lg sm:text-xl lg:text-2xl text-yellow font-bold mb-4 leading-relaxed px-4 sm:px-0">
               Leading African hub for creative innovation, youth empowerment, and sustainable entrepreneurship
             </p>
-            <div className="w-32 h-1 bg-gradient-secondary mx-auto rounded-full"></div>
+            <div className="w-24 sm:w-32 h-1 bg-gradient-secondary mx-auto rounded-full"></div>
           </div>
 
           {/* Mission Statement with better styling */}
-          <div className="max-w-5xl mx-auto bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-yellow/20">
-            <p className="text-lg text-white leading-relaxed font-medium">
+          <div className="max-w-5xl mx-4 sm:mx-auto bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-yellow/20">
+            <p className="text-base sm:text-lg text-white leading-relaxed font-medium">
               We unleash creative potential for sustainable development by promoting the integration of 
               arts, culture, technology, and business through inclusive platforms, strategic partnerships, 
               and innovative enterprise.

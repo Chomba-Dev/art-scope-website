@@ -126,9 +126,9 @@ function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <ScrollReveal animation="up">
             <div className="text-center mb-16">
-              <h2 className="section-title text-navy mb-6">🏢 Our Operations</h2>
+              <h2 className="section-title text-navy mb-6 px-4 sm:px-0">🏢 Our Operations</h2>
               <div className="w-24 h-1 bg-navy mx-auto mb-8 rounded-full"></div>
-              <p className="text-xl text-navy max-w-4xl mx-auto font-medium leading-relaxed">
+              <p className="text-lg sm:text-xl text-navy max-w-4xl mx-auto font-medium leading-relaxed px-4 sm:px-0">
                 Discover our diverse business units working together to create sustainable impact 
                 through innovation, creativity, and strategic partnerships across multiple sectors.
               </p>
@@ -184,9 +184,9 @@ function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <ScrollReveal animation="up">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-yellow mb-4">🎭 Latest Events & News</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-yellow mb-4 px-4 sm:px-0">🎭 Latest Events & News</h2>
               <div className="w-24 h-1 bg-gradient-secondary mx-auto mb-8 rounded-full"></div>
-              <p className="text-xl text-yellow max-w-3xl mx-auto font-semibold leading-relaxed">
+              <p className="text-lg sm:text-xl text-yellow max-w-3xl mx-auto font-semibold leading-relaxed px-4 sm:px-0">
                 Stay updated with our latest events, workshops, and company news. 
                 Join our community and be part of the creative revolution.
               </p>

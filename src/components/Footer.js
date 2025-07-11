@@ -26,13 +26,13 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-navy text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="bg-navy text-white w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {/* Company Info */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="relative w-16 h-12">
+          <div className="sm:col-span-2 lg:col-span-2">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-3 mb-4">
+              <div className="relative w-16 h-12 flex-shrink-0">
                 <Image
                   src="/images/logo.jpg"
                   alt="Art Scope Enterprises Limited"
@@ -40,25 +40,25 @@ export default function Footer() {
                   className="object-contain"
                 />
               </div>
-              <div>
-                <h3 className="text-xl font-bold">Art Scope Enterprises Limited</h3>
-                <p className="text-yellow text-sm">Empowering Artists and Creatives</p>
+              <div className="min-w-0">
+                <h3 className="text-lg sm:text-xl font-bold leading-tight">Art Scope Enterprises Limited</h3>
+                <p className="text-yellow text-sm font-medium">Empowering Artists and Creatives</p>
               </div>
             </div>
-            <p className="text-gray mb-6 max-w-md">
+            <p className="text-white/80 mb-6 max-w-md text-sm sm:text-base leading-relaxed">
               Leading African hub for creative innovation, youth empowerment, and sustainable entrepreneurship. 
               Unleashing creative potential for sustainable development through arts, culture, technology, and business integration.
             </p>
             
             {/* Social Links */}
-            <div className="flex space-x-4">
+            <div className="flex flex-wrap gap-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
-                  className="w-10 h-10 bg-yellow/10 hover:bg-yellow/20 rounded-lg flex items-center justify-center group transition-colors duration-200"
+                  className="w-10 h-10 bg-yellow/10 hover:bg-yellow/20 rounded-lg flex items-center justify-center group transition-colors duration-200 touch-manipulation"
                   aria-label={social.label}
-                  target="_blank"
+                  target="_blank" 
                   rel="noopener noreferrer"
                 >
                   <svg className="w-5 h-5 text-yellow" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -70,14 +70,14 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="min-w-0">
             <h4 className="text-lg font-semibold mb-4 text-yellow">Quick Links</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray hover:text-yellow transition-colors duration-200"
+                    className="text-white/80 hover:text-yellow transition-colors duration-200 text-sm sm:text-base touch-manipulation"
                   >
                     {link.label}
                   </Link>
@@ -87,14 +87,14 @@ export default function Footer() {
           </div>
 
           {/* Subsidiaries */}
-          <div>
+          <div className="min-w-0">
             <h4 className="text-lg font-semibold mb-4 text-yellow">Our Operations</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {subsidiaries.map((subsidiary) => (
                 <li key={subsidiary.href}>
                   <Link
                     href={subsidiary.href}
-                    className="text-gray hover:text-yellow transition-colors duration-200"
+                    className="text-white/80 hover:text-yellow transition-colors duration-200 text-sm sm:text-base touch-manipulation"
                   >
                     {subsidiary.label}
                   </Link>
@@ -105,43 +105,56 @@ export default function Footer() {
         </div>
 
         {/* Contact Info */}
-        <div className="mt-8 pt-8 border-t border-white/10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-            <div className="text-center md:text-left">
-              <h5 className="font-semibold text-yellow mb-2">Email</h5>
-              <a href="mailto:prosperchilufya9@gmail.com" className="text-gray hover:text-yellow transition-colors duration-200">
+        <div className="mt-8 pt-6 sm:pt-8 border-t border-white/10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+            <div className="text-center sm:text-left">
+              <h5 className="font-semibold text-yellow mb-3 text-base">Email</h5>
+              <a 
+                href="mailto:prosperchilufya9@gmail.com" 
+                className="text-white/80 hover:text-yellow transition-colors duration-200 text-sm sm:text-base break-all touch-manipulation"
+              >
                 prosperchilufya9@gmail.com
               </a>
             </div>
-            <div className="text-center md:text-left">
-              <h5 className="font-semibold text-yellow mb-2">Phone</h5>
-              <div>
-                <a href="tel:+260973577060" className="text-gray hover:text-yellow transition-colors duration-200 block">
+            <div className="text-center sm:text-left">
+              <h5 className="font-semibold text-yellow mb-3 text-base">Phone</h5>
+              <div className="space-y-1">
+                <a 
+                  href="tel:+260973577060" 
+                  className="text-white/80 hover:text-yellow transition-colors duration-200 block text-sm sm:text-base touch-manipulation"
+                >
                   +260 973 577 060
                 </a>
-                <a href="tel:+260958528660" className="text-gray hover:text-yellow transition-colors duration-200 block">
+                <a 
+                  href="tel:+260958528660" 
+                  className="text-white/80 hover:text-yellow transition-colors duration-200 block text-sm sm:text-base touch-manipulation"
+                >
                   +260 958 528 660
                 </a>
               </div>
             </div>
-            <div className="text-center md:text-left">
-              <h5 className="font-semibold text-yellow mb-2">Location</h5>
-              <p className="text-gray">Plot No. 1132, Olipa Banda, Kanyama Site and Service, Lusaka, Zambia</p>
+            <div className="text-center sm:text-left sm:col-span-2 lg:col-span-1">
+              <h5 className="font-semibold text-yellow mb-3 text-base">Location</h5>
+              <p className="text-white/80 text-sm sm:text-base leading-relaxed">
+                Plot No. 1132, Olipa Banda<br className="hidden sm:block" />
+                <span className="sm:hidden"> </span>Kanyama Site and Service<br className="hidden sm:block" />
+                <span className="sm:hidden"> </span>Lusaka, Zambia
+              </p>
             </div>
           </div>
 
           {/* Copyright */}
           <div className="text-center pt-6 border-t border-white/10">
-            <p className="text-gray text-sm mb-2">
+            <p className="text-white/80 text-sm mb-2">
               © {currentYear} Art Scope Enterprises Limited. All rights reserved.
             </p>
-            <p className="text-gray text-xs">
+            <p className="text-white/60 text-xs">
               Developed by{' '}
               <a 
                 href="https://gershom-chomba-portfolio.vercel.app/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-yellow hover:text-white transition-colors duration-200"
+                className="text-yellow hover:text-white transition-colors duration-200 touch-manipulation"
               >
                 Gershom Chomba
               </a>

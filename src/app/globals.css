@@ -666,3 +666,157 @@ section[class*="bg-white"] div:not(.text-yellow):not(.text-navy):not(.text-white
 .mobile-menu-backdrop {
   backdrop-filter: blur(4px);
 }
+
+/* Mobile Text Visibility and Responsiveness Improvements */
+@media (max-width: 768px) {
+  /* Ensure all text is properly sized and visible on mobile */
+  body {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Mobile text contrast improvements */
+  .text-white {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  .text-yellow {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+  }
+  
+  /* Ensure headings are properly sized on mobile */
+  .hero-title {
+    font-size: 2.5rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  .section-title {
+    font-size: 2rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  /* Mobile padding adjustments */
+  .section-padding {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  
+  /* Touch targets for mobile */
+  .touch-manipulation {
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Ensure buttons are properly sized for touch */
+  .btn-primary,
+  .btn-secondary,
+  .btn-tertiary {
+    min-height: 48px !important;
+    min-width: 48px !important;
+    padding: 12px 24px !important;
+    font-size: 16px !important;
+  }
+  
+  /* Mobile card improvements */
+  .card-primary {
+    padding: 1.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Mobile text improvements for white backgrounds */
+  section[class*="bg-white"] p,
+  section[class*="bg-white"] span,
+  section[class*="bg-white"] div {
+    color: #1f2937 !important;
+    font-weight: 500 !important;
+  }
+  
+  /* Mobile navigation improvements */
+  .mobile-menu-item {
+    min-height: 56px !important;
+    font-size: 16px !important;
+  }
+  
+  /* Footer mobile improvements */
+  footer {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  footer h3,
+  footer h4,
+  footer h5 {
+    font-size: 1.125rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  footer p,
+  footer a {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+  
+  /* Mobile grid adjustments */
+  .grid {
+    gap: 1rem !important;
+  }
+  
+  /* Ensure proper spacing on mobile */
+  .max-w-7xl {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+/* Tablet specific improvements */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-title {
+    font-size: 3.5rem !important;
+  }
+  
+  .section-title {
+    font-size: 2.5rem !important;
+  }
+  
+  .card-primary {
+    padding: 2rem !important;
+  }
+}
+
+/* Mobile-first responsive image placeholders */
+.image-placeholder {
+  min-height: 200px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%) !important;
+  border: 2px dashed #d1d5db !important;
+  border-radius: 0.75rem !important;
+}
+
+@media (max-width: 768px) {
+  .image-placeholder {
+    min-height: 150px !important;
+    padding: 1rem !important;
+  }
+  
+  .image-placeholder div {
+    text-align: center !important;
+  }
+  
+  .image-placeholder h3,
+  .image-placeholder h4 {
+    font-size: 1rem !important;
+    color: #374151 !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .image-placeholder p {
+    font-size: 0.875rem !important;
+    color: #6b7280 !important;
+  }
+}

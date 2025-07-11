@@ -30,6 +30,21 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Ensure all sections have proper background inheritance */
+section {
+  position: relative;
+}
+
+/* Ensure footer has proper background */
+footer,
+footer.bg-navy,
+footer[class*="bg-navy"] {
+  background-color: #000f3d !important;
+  background: #000f3d !important;
 }
 
 /* Custom utility classes */
@@ -41,7 +56,9 @@ body {
   border-radius: 0.75rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
   border: 2px solid #FFD700;
   text-align: center;
@@ -49,6 +66,8 @@ body {
   letter-spacing: 0.025em;
   position: relative;
   overflow: hidden;
+  min-height: 48px;
+  min-width: 120px;
 }
 
 .btn-primary:hover {
@@ -72,13 +91,17 @@ body {
   border-radius: 0.75rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   box-shadow: 0 10px 25px rgba(255, 215, 0, 0.2);
   text-align: center;
   font-size: 1.125rem;
   letter-spacing: 0.025em;
   position: relative;
   overflow: hidden;
+  min-height: 48px;
+  min-width: 120px;
 }
 
 .btn-secondary:hover {
@@ -103,13 +126,17 @@ body {
   border-radius: 0.75rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   box-shadow: 0 10px 25px rgba(0, 15, 61, 0.3);
   text-align: center;
   font-size: 1.125rem;
   letter-spacing: 0.025em;
   position: relative;
   overflow: hidden;
+  min-height: 48px;
+  min-width: 120px;
 }
 
 .btn-tertiary:hover {
@@ -641,13 +668,6 @@ section[class*="bg-white"] div:not(.text-yellow):not(.text-navy):not(.text-white
   justify-content: center !important;
 }
 
-/* Hide hamburger menu on large screens */
-@media (min-width: 1024px) {
-  .hamburger-button {
-    display: none !important;
-  }
-}
-
 .hamburger-button:hover {
   background-color: #e6c200 !important;
   transform: scale(1.05) !important;
@@ -677,21 +697,32 @@ section[class*="bg-white"] div:not(.text-yellow):not(.text-navy):not(.text-white
   
   /* Mobile text contrast improvements */
   .text-white {
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+    color: #ffffff !important;
   }
   
   .text-yellow {
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6) !important;
+    color: #FFD700 !important;
+  }
+  
+  /* Enhanced text readability on dark backgrounds */
+  .bg-gradient-primary .text-white,
+  .bg-navy .text-white,
+  section[class*="bg-gradient-primary"] .text-white,
+  section[class*="bg-navy"] .text-white {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
   }
   
   /* Ensure headings are properly sized on mobile */
   .hero-title {
-    font-size: 2.5rem !important;
+    font-size: 2.25rem !important;
     line-height: 1.2 !important;
   }
   
   .section-title {
-    font-size: 2rem !important;
+    font-size: 1.875rem !important;
     line-height: 1.3 !important;
   }
   
@@ -715,10 +746,37 @@ section[class*="bg-white"] div:not(.text-yellow):not(.text-navy):not(.text-white
   .btn-primary,
   .btn-secondary,
   .btn-tertiary {
-    min-height: 48px !important;
-    min-width: 48px !important;
-    padding: 12px 24px !important;
+    min-height: 56px !important;
+    min-width: 120px !important;
+    padding: 16px 32px !important;
     font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 12px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  }
+  
+  .btn-primary {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%) !important;
+    color: #000f3d !important;
+    border: 2px solid #FFD700 !important;
+  }
+  
+  .btn-secondary {
+    background: transparent !important;
+    color: #FFD700 !important;
+    border: 2px solid #FFD700 !important;
+  }
+  
+  .btn-tertiary {
+    background: #000f3d !important;
+    color: #FFD700 !important;
+    border: 2px solid #000f3d !important;
   }
   
   /* Mobile card improvements */
@@ -735,6 +793,16 @@ section[class*="bg-white"] div:not(.text-yellow):not(.text-navy):not(.text-white
     font-weight: 500 !important;
   }
   
+  /* Ensure footer keeps dark background on mobile */
+  footer {
+    background-color: #000f3d !important;
+    background: #000f3d !important;
+  }
+  
+  footer * {
+    background-color: transparent !important;
+  }
+  
   /* Mobile navigation improvements */
   .mobile-menu-item {
     min-height: 56px !important;
@@ -743,8 +811,19 @@ section[class*="bg-white"] div:not(.text-yellow):not(.text-navy):not(.text-white
   
   /* Footer mobile improvements */
   footer {
+    background-color: #000f3d !important;
+    background: #000f3d !important;
     padding-top: 2rem !important;
     padding-bottom: 2rem !important;
+  }
+  
+  footer * {
+    background-color: transparent !important;
+  }
+  
+  footer .bg-navy {
+    background-color: #000f3d !important;
+    background: #000f3d !important;
   }
   
   footer .grid {
@@ -854,5 +933,387 @@ section[class*="bg-white"] div:not(.text-yellow):not(.text-navy):not(.text-white
   .image-placeholder p {
     font-size: 0.875rem !important;
     color: #6b7280 !important;
+  }
+}
+
+/* Samsung S8 and similar small mobile devices (360px width) */
+@media (max-width: 375px) {
+  /* Extra small mobile adjustments */
+  body {
+    font-size: 14px !important;
+  }
+  
+  /* Smaller hero title for very small screens */
+  .hero-title {
+    font-size: 2rem !important;
+    line-height: 1.1 !important;
+  }
+  
+  /* Smaller section titles */
+  .section-title {
+    font-size: 1.75rem !important;
+  }
+  
+  /* Better button sizing for small screens */
+  .btn-primary,
+  .btn-secondary,
+  .btn-tertiary {
+    min-height: 52px !important;
+    min-width: 100px !important;
+    padding: 14px 24px !important;
+    font-size: 15px !important;
+    border-radius: 10px !important;
+  }
+  
+  /* Tighter padding for small screens */
+  .max-w-7xl {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+  
+  /* Footer adjustments for small screens */
+  footer {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  
+  footer .grid {
+    gap: 1.5rem !important;
+  }
+  
+  footer h3,
+  footer h4,
+  footer h5 {
+    font-size: 1rem !important;
+  }
+  
+  footer p,
+  footer a {
+    font-size: 13px !important;
+  }
+  
+  /* Ensure footer background is always dark */
+  footer,
+  footer .bg-navy {
+    background-color: #000f3d !important;
+    background: #000f3d !important;
+  }
+}
+
+/* Medium mobile devices (iPhone SE, smaller Android phones) */
+@media (min-width: 376px) and (max-width: 414px) {
+  .hero-title {
+    font-size: 2.25rem !important;
+  }
+  
+  .section-title {
+    font-size: 1.875rem !important;
+  }
+  
+  .btn-primary,
+  .btn-secondary,
+  .btn-tertiary {
+    min-height: 54px !important;
+    min-width: 110px !important;
+    padding: 15px 28px !important;
+    font-size: 15px !important;
+  }
+}
+
+/* Standard mobile devices (iPhone 12/13, most Android phones) */
+@media (min-width: 415px) and (max-width: 480px) {
+  .hero-title {
+    font-size: 2.5rem !important;
+  }
+  
+  .section-title {
+    font-size: 2rem !important;
+  }
+  
+  .btn-primary,
+  .btn-secondary,
+  .btn-tertiary {
+    min-height: 56px !important;
+    min-width: 120px !important;
+    padding: 16px 32px !important;
+    font-size: 16px !important;
+  }
+}
+
+/* Large mobile devices and small tablets */
+@media (min-width: 481px) and (max-width: 640px) {
+  .hero-title {
+    font-size: 2.75rem !important;
+  }
+  
+  .section-title {
+    font-size: 2.25rem !important;
+  }
+}
+
+/* Force footer to always have dark background */
+footer {
+  background-color: #000f3d !important;
+  background: #000f3d !important;
+}
+
+footer .bg-navy {
+  background-color: #000f3d !important;
+  background: #000f3d !important;
+}
+
+footer * {
+  background-color: transparent !important;
+}
+
+/* Override any conflicting styles */
+footer.bg-navy {
+  background-color: #000f3d !important;
+  background: #000f3d !important;
+}
+
+/* Mobile browser specific fixes */
+* {
+  -webkit-tap-highlight-color: rgba(255, 215, 0, 0.3);
+}
+
+/* Prevent zoom on input focus on mobile */
+input, select, textarea {
+  font-size: 16px !important;
+}
+
+/* Better touch targets */
+a, button, [role="button"] {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Samsung browser specific fixes */
+@supports (-webkit-touch-callout: none) {
+  /* iOS Safari specific fixes */
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Android Chrome specific fixes */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  select, textarea, input {
+    font-size: 16px !important;
+  }
+}
+
+/* Ensure all backgrounds are properly set */
+html {
+  background-color: #ffffff;
+}
+
+/* Mobile viewport fixes */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+  
+  body {
+    font-size: 16px;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+  
+  /* Prevent horizontal scrolling */
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Better container behavior */
+  .container, .max-w-7xl {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Universal Mobile Text Enhancements */
+@media (max-width: 768px) {
+  /* Improve text readability on all backgrounds */
+  p, span, div {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Specific improvements for call-to-action sections */
+  .bg-gradient-primary p,
+  .bg-navy p,
+  section[class*="bg-gradient-primary"] p,
+  section[class*="bg-navy"] p {
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-weight: 500 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Yellow text on dark backgrounds */
+  .bg-gradient-primary .text-yellow,
+  .bg-navy .text-yellow,
+  section[class*="bg-gradient-primary"] .text-yellow,
+  section[class*="bg-navy"] .text-yellow {
+    color: #FFD700 !important;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6) !important;
+    font-weight: 600 !important;
+  }
+  
+  /* Enhanced section titles */
+  .section-title {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    font-weight: 800 !important;
+  }
+  
+  /* Better contrast for links and interactive elements */
+  a, button {
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  /* Responsive text sizing */
+  .text-xl {
+    font-size: 1.125rem !important;
+  }
+  
+  .text-lg {
+    font-size: 1rem !important;
+  }
+  
+  /* Better spacing for mobile readability */
+  .leading-relaxed {
+    line-height: 1.7 !important;
+  }
+  
+  /* Ensure proper spacing in containers */
+  .max-w-4xl,
+  .max-w-3xl {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+/* High-DPI displays (Retina screens) */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .text-white,
+  .text-yellow {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
+  }
+}
+
+/* Portrait orientation specific improvements */
+@media (orientation: portrait) and (max-width: 768px) {
+  /* Better spacing for portrait mode */
+  .section-padding {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+  
+  /* More compact hero sections */
+  .min-h-screen {
+    min-height: 85vh !important;
+  }
+}
+
+/* Landscape orientation for mobile */
+@media (orientation: landscape) and (max-height: 480px) {
+  /* Adjust for landscape mobile viewing */
+  .min-h-screen {
+    min-height: 100vh !important;
+  }
+  
+  .hero-title {
+    font-size: 2rem !important;
+  }
+  
+  .section-title {
+    font-size: 1.75rem !important;
+  }
+}
+
+/* Enhanced Small Screen Header Optimizations */
+@media (max-width: 480px) {
+  /* Compact header for very small screens */
+  header {
+    min-height: 56px !important;
+  }
+  
+  /* Logo positioning optimization */
+  header .flex.justify-between {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+  
+  /* Logo corner positioning */
+  header a[href="/"] {
+    margin-right: 0.5rem !important;
+  }
+  
+  /* Compact hamburger menu */
+  .hamburger-button {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    border-radius: 0.5rem !important;
+  }
+  
+  /* Hide company text on very small screens */
+  header h1,
+  header p {
+    display: none !important;
+  }
+  
+  /* Logo size adjustment for corner positioning */
+  header .relative {
+    width: 2.25rem !important;
+    height: 1.75rem !important;
+  }
+}
+
+/* Medium small screens (iPhone SE size) */
+@media (min-width: 481px) and (max-width: 640px) {
+  /* Slightly larger logo but still compact */
+  header .relative {
+    width: 2.75rem !important;
+    height: 2.25rem !important;
+  }
+  
+  /* Show abbreviated company name */
+  header h1 {
+    font-size: 0.875rem !important;
+    display: block !important;
+  }
+  
+  header p {
+    display: none !important;
+  }
+}
+
+/* Better mobile header spacing */
+@media (max-width: 768px) {
+  /* Ensure proper spacing between logo and menu */
+  header .flex.justify-between {
+    gap: 0.5rem !important;
+  }
+  
+  /* Corner positioning for logo */
+  header a[href="/"] {
+    flex-shrink: 0 !important;
+    min-width: auto !important;
+  }
+  
+  /* Hamburger button corner positioning */
+  .hamburger-button {
+    flex-shrink: 0 !important;
+    margin-left: auto !important;
   }
 }

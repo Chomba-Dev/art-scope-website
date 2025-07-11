@@ -125,10 +125,10 @@ function Home() {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <ScrollReveal animation="up">
-            <div className="text-center mb-16">
-              <h2 className="section-title text-navy mb-6 px-4 sm:px-0">🏢 Our Operations</h2>
+            <div className="text-center mb-16 px-4 sm:px-0">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-navy mb-6">🏢 Our Operations</h2>
               <div className="w-24 h-1 bg-navy mx-auto mb-8 rounded-full"></div>
-              <p className="text-lg sm:text-xl text-navy max-w-4xl mx-auto font-medium leading-relaxed px-4 sm:px-0">
+              <p className="text-base sm:text-lg lg:text-xl text-navy max-w-4xl mx-auto font-medium leading-relaxed">
                 Discover our diverse business units working together to create sustainable impact 
                 through innovation, creativity, and strategic partnerships across multiple sectors.
               </p>
@@ -183,10 +183,10 @@ function Home() {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <ScrollReveal animation="up">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold text-yellow mb-4 px-4 sm:px-0">🎭 Latest Events & News</h2>
+            <div className="text-center mb-16 px-4 sm:px-0">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">🎭 Latest Events & News</h2>
               <div className="w-24 h-1 bg-gradient-secondary mx-auto mb-8 rounded-full"></div>
-              <p className="text-lg sm:text-xl text-yellow max-w-3xl mx-auto font-semibold leading-relaxed px-4 sm:px-0">
+              <p className="text-base sm:text-lg lg:text-xl text-white max-w-3xl mx-auto font-medium leading-relaxed opacity-90">
                 Stay updated with our latest events, workshops, and company news. 
                 Join our community and be part of the creative revolution.
               </p>
@@ -224,10 +224,10 @@ function Home() {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <ScrollReveal animation="up">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="section-title text-white mb-6">Ready to Unleash Your Creative Potential?</h2>
+            <div className="max-w-4xl mx-auto px-4 sm:px-0">
+              <h2 className="section-title text-white mb-6 text-2xl sm:text-3xl lg:text-4xl">Ready to Unleash Your Creative Potential?</h2>
               <div className="w-24 h-1 bg-gradient-secondary mx-auto mb-8"></div>
-              <p className="text-xl text-yellow leading-relaxed font-medium mb-12">
+              <p className="text-lg sm:text-xl text-white leading-relaxed font-medium mb-12 opacity-90">
                 Whether you're an artist, entrepreneur, or organization looking to innovate, 
                 we're here to help you achieve your creative and business goals through strategic partnerships and innovative solutions.
               </p>
@@ -248,17 +248,17 @@ function Home() {
           </ScrollReveal>
 
           <ScrollReveal animation="fade" delay={2}>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <a href="/contact" className="btn-primary group min-w-[200px]">
-                <span className="flex items-center space-x-2">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4 sm:px-0">
+              <a href="/contact" className="btn-primary group w-full sm:w-auto min-w-[200px] text-center">
+                <span className="flex items-center justify-center space-x-2">
                   <span>Get Started Today</span>
                   <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </span>
               </a>
-              <a href="/about" className="btn-secondary group min-w-[200px]">
-                <span className="flex items-center space-x-2">
+              <a href="/about" className="btn-secondary group w-full sm:w-auto min-w-[200px] text-center">
+                <span className="flex items-center justify-center space-x-2">
                   <span>Learn More About Us</span>
                   <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />

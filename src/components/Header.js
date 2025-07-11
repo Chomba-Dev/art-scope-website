@@ -61,23 +61,23 @@ export default function Header() {
 
   return (
     <header className="bg-gradient-to-r from-navy via-navy to-blue-900 text-white shadow-xl sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-3 sm:py-4 min-h-[64px]">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 group min-w-0 flex-1 lg:flex-initial">
-            <div className="relative w-14 h-10 sm:w-16 sm:h-12 md:w-20 md:h-14 transition-transform duration-200 group-hover:scale-105 flex-shrink-0">
+      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center py-2 sm:py-4 min-h-[56px] sm:min-h-[64px]">
+          {/* Logo - Optimized for small screens */}
+          <Link href="/" className="flex items-center space-x-2 sm:space-x-3 group min-w-0 flex-shrink-0 mr-2">
+            <div className="relative w-8 h-6 xs:w-10 xs:h-8 sm:w-14 sm:h-10 md:w-16 md:h-12 lg:w-20 lg:h-14 transition-transform duration-200 group-hover:scale-105 flex-shrink-0">
               <Image
                 src="/images/logo.jpg"
                 alt="Art Scope Enterprises Limited"
                 fill
                 className="object-contain"
                 priority
-                sizes="(max-width: 640px) 56px, (max-width: 768px) 64px, 80px"
+                sizes="(max-width: 480px) 32px, (max-width: 640px) 40px, (max-width: 768px) 56px, 80px"
               />
             </div>
-            <div className="hidden sm:block min-w-0">
-              <h1 className="text-lg sm:text-xl font-bold text-white leading-tight truncate">Art Scope Enterprises</h1>
-              <p className="text-xs sm:text-sm text-yellow font-medium truncate">Empowering Artists and Creatives</p>
+            <div className="hidden xs:block sm:block min-w-0 max-w-[180px] sm:max-w-[200px] lg:max-w-none">
+              <h1 className="text-xs xs:text-sm sm:text-lg lg:text-xl font-bold text-white leading-tight truncate">Art Scope Enterprises</h1>
+              <p className="hidden sm:block text-xs sm:text-sm text-yellow font-medium truncate">Empowering Artists and Creatives</p>
             </div>
           </Link>
 
@@ -95,24 +95,24 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Mobile Menu Button - Super Visible */}
+          {/* Mobile Menu Button - Compact for small screens */}
           <button
             ref={hamburgerRef}
-            className="lg:hidden hamburger-button w-12 h-12 bg-yellow border-2 border-navy rounded-xl hover:bg-yellow/90 hover:scale-105 transition-all duration-200 flex-shrink-0 relative focus:outline-none focus:ring-2 focus:ring-yellow shadow-lg z-50 cursor-pointer flex items-center justify-center"
+            className="lg:hidden hamburger-button w-10 h-10 sm:w-12 sm:h-12 bg-yellow border-2 border-navy rounded-lg sm:rounded-xl hover:bg-yellow/90 hover:scale-105 transition-all duration-200 flex-shrink-0 relative focus:outline-none focus:ring-2 focus:ring-yellow shadow-lg z-50 cursor-pointer flex items-center justify-center"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle mobile menu"
             aria-expanded={isMenuOpen}
           >
-            {/* Hamburger Icon - Thick, Visible Lines */}
-            <div className="w-6 h-6 flex flex-col justify-center items-center space-y-1">
-              <span className={`hamburger-line block w-5 h-0.5 bg-navy rounded transition-all duration-300 ease-in-out transform ${
-                isMenuOpen ? 'rotate-45 translate-y-1.5' : ''
+            {/* Hamburger Icon - Responsive sizing */}
+            <div className="w-5 h-5 sm:w-6 sm:h-6 flex flex-col justify-center items-center space-y-0.5 sm:space-y-1">
+              <span className={`hamburger-line block w-4 h-0.5 sm:w-5 sm:h-0.5 bg-navy rounded transition-all duration-300 ease-in-out transform ${
+                isMenuOpen ? 'rotate-45 translate-y-1 sm:translate-y-1.5' : ''
               }`}></span>
-              <span className={`hamburger-line block w-5 h-0.5 bg-navy rounded transition-all duration-300 ease-in-out ${
+              <span className={`hamburger-line block w-4 h-0.5 sm:w-5 sm:h-0.5 bg-navy rounded transition-all duration-300 ease-in-out ${
                 isMenuOpen ? 'opacity-0' : 'opacity-100'
               }`}></span>
-              <span className={`hamburger-line block w-5 h-0.5 bg-navy rounded transition-all duration-300 ease-in-out transform ${
-                isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
+              <span className={`hamburger-line block w-4 h-0.5 sm:w-5 sm:h-0.5 bg-navy rounded transition-all duration-300 ease-in-out transform ${
+                isMenuOpen ? '-rotate-45 -translate-y-1 sm:-translate-y-1.5' : ''
               }`}></span>
             </div>
           </button>

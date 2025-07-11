@@ -747,6 +747,10 @@ section[class*="bg-white"] div:not(.text-yellow):not(.text-navy):not(.text-white
     padding-bottom: 2rem !important;
   }
   
+  footer .grid {
+    gap: 2rem !important;
+  }
+  
   footer h3,
   footer h4,
   footer h5 {
@@ -758,6 +762,38 @@ section[class*="bg-white"] div:not(.text-yellow):not(.text-navy):not(.text-white
   footer a {
     font-size: 14px !important;
     line-height: 1.5 !important;
+  }
+  
+  /* Maintain desktop footer structure on mobile */
+  footer .lg\:col-span-2 {
+    margin-bottom: 1.5rem;
+  }
+  
+  footer .min-w-0 {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Footer contact section mobile adjustments */
+  footer .border-t {
+    margin-top: 1.5rem !important;
+    padding-top: 1.5rem !important;
+  }
+  
+  /* Ensure footer text is always visible */
+  footer * {
+    color: inherit !important;
+  }
+  
+  footer .text-yellow {
+    color: #FFD700 !important;
+  }
+  
+  footer .text-white\/80 {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+  
+  footer .text-white\/60 {
+    color: rgba(255, 255, 255, 0.6) !important;
   }
   
   /* Mobile grid adjustments */

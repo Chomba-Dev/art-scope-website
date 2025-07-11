@@ -28,10 +28,11 @@ export default function Footer() {
   return (
     <footer className="bg-navy text-white w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          {/* Company Info */}
-          <div className="sm:col-span-2 lg:col-span-2">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-3 mb-4">
+        {/* Main Footer Content - maintains desktop structure on mobile */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Company Info - spans 2 columns on larger screens */}
+          <div className="lg:col-span-2">
+            <div className="flex items-start space-x-3 mb-4">
               <div className="relative w-16 h-12 flex-shrink-0">
                 <Image
                   src="/images/logo.jpg"
@@ -41,7 +42,7 @@ export default function Footer() {
                 />
               </div>
               <div className="min-w-0">
-                <h3 className="text-lg sm:text-xl font-bold leading-tight">Art Scope Enterprises Limited</h3>
+                <h3 className="text-xl font-bold leading-tight">Art Scope Enterprises Limited</h3>
                 <p className="text-yellow text-sm font-medium">Empowering Artists and Creatives</p>
               </div>
             </div>
@@ -51,12 +52,12 @@ export default function Footer() {
             </p>
             
             {/* Social Links */}
-            <div className="flex flex-wrap gap-3">
+            <div className="flex space-x-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
-                  className="w-10 h-10 bg-yellow/10 hover:bg-yellow/20 rounded-lg flex items-center justify-center group transition-colors duration-200 touch-manipulation"
+                  className="w-10 h-10 bg-yellow/10 hover:bg-yellow/20 rounded-lg flex items-center justify-center group transition-colors duration-200"
                   aria-label={social.label}
                   target="_blank" 
                   rel="noopener noreferrer"
@@ -72,12 +73,12 @@ export default function Footer() {
           {/* Quick Links */}
           <div className="min-w-0">
             <h4 className="text-lg font-semibold mb-4 text-yellow">Quick Links</h4>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-white/80 hover:text-yellow transition-colors duration-200 text-sm sm:text-base touch-manipulation"
+                    className="text-white/80 hover:text-yellow transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -89,12 +90,12 @@ export default function Footer() {
           {/* Subsidiaries */}
           <div className="min-w-0">
             <h4 className="text-lg font-semibold mb-4 text-yellow">Our Operations</h4>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {subsidiaries.map((subsidiary) => (
                 <li key={subsidiary.href}>
                   <Link
                     href={subsidiary.href}
-                    className="text-white/80 hover:text-yellow transition-colors duration-200 text-sm sm:text-base touch-manipulation"
+                    className="text-white/80 hover:text-yellow transition-colors duration-200"
                   >
                     {subsidiary.label}
                   </Link>
@@ -104,41 +105,39 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Contact Info */}
-        <div className="mt-8 pt-6 sm:pt-8 border-t border-white/10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-            <div className="text-center sm:text-left">
-              <h5 className="font-semibold text-yellow mb-3 text-base">Email</h5>
+        {/* Contact Info Section - maintains desktop layout structure */}
+        <div className="mt-8 pt-8 border-t border-white/10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <div className="text-center md:text-left">
+              <h5 className="font-semibold text-yellow mb-2">Email</h5>
               <a 
                 href="mailto:prosperchilufya9@gmail.com" 
-                className="text-white/80 hover:text-yellow transition-colors duration-200 text-sm sm:text-base break-all touch-manipulation"
+                className="text-white/80 hover:text-yellow transition-colors duration-200 break-words"
               >
                 prosperchilufya9@gmail.com
               </a>
             </div>
-            <div className="text-center sm:text-left">
-              <h5 className="font-semibold text-yellow mb-3 text-base">Phone</h5>
+            <div className="text-center md:text-left">
+              <h5 className="font-semibold text-yellow mb-2">Phone</h5>
               <div className="space-y-1">
                 <a 
                   href="tel:+260973577060" 
-                  className="text-white/80 hover:text-yellow transition-colors duration-200 block text-sm sm:text-base touch-manipulation"
+                  className="text-white/80 hover:text-yellow transition-colors duration-200 block"
                 >
                   +260 973 577 060
                 </a>
                 <a 
                   href="tel:+260958528660" 
-                  className="text-white/80 hover:text-yellow transition-colors duration-200 block text-sm sm:text-base touch-manipulation"
+                  className="text-white/80 hover:text-yellow transition-colors duration-200 block"
                 >
                   +260 958 528 660
                 </a>
               </div>
             </div>
-            <div className="text-center sm:text-left sm:col-span-2 lg:col-span-1">
-              <h5 className="font-semibold text-yellow mb-3 text-base">Location</h5>
-              <p className="text-white/80 text-sm sm:text-base leading-relaxed">
-                Plot No. 1132, Olipa Banda<br className="hidden sm:block" />
-                <span className="sm:hidden"> </span>Kanyama Site and Service<br className="hidden sm:block" />
-                <span className="sm:hidden"> </span>Lusaka, Zambia
+            <div className="text-center md:text-left">
+              <h5 className="font-semibold text-yellow mb-2">Location</h5>
+              <p className="text-white/80 leading-relaxed">
+                Plot No. 1132, Olipa Banda, Kanyama Site and Service, Lusaka, Zambia
               </p>
             </div>
           </div>
@@ -154,7 +153,7 @@ export default function Footer() {
                 href="https://gershom-chomba-portfolio.vercel.app/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-yellow hover:text-white transition-colors duration-200 touch-manipulation"
+                className="text-yellow hover:text-white transition-colors duration-200"
               >
                 Gershom Chomba
               </a>

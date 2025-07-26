@@ -110,27 +110,32 @@ function Home() {
     }
   ];
 
-  // Hero carousel images
+  // Hero carousel images - Selected for optimal quality and composition
   const heroImages = [
     {
-      src: "/images/photos/IMG-20250714-WA0129.jpg",
-      alt: "Art Scope Enterprises - Creative Innovation Hub"
-    },
-    {
-      src: "/images/photos/IMG-20250714-WA0145.jpg", 
-      alt: "Empowering Artists and Creatives Across Africa"
-    },
-    {
-      src: "/images/photos/IMG-20250714-WA0167.jpg",
-      alt: "Sustainable Development Through Arts and Culture"
+      src: "/images/photos/IMG-20250714-WA0193.jpg", 
+      alt: "Empowering Artists and Creatives Across Africa",
+      position: "center center"
     },
     {
       src: "/images/photos/IMG-20250714-WA0168.jpg",
-      alt: "Youth Empowerment and Creative Excellence"
+      alt: "Youth Empowerment and Creative Excellence",
+      position: "center center"
     },
     {
       src: "/images/photos/IMG-20250714-WA0169.jpg",
-      alt: "Leading African Hub for Creative Innovation"
+      alt: "Leading African Hub for Creative Innovation",
+      position: "center center"
+    },
+    {
+      src: "/images/photos/IMG-20250714-WA0167.jpg",
+      alt: "Sustainable Development Through Arts and Culture",
+      position: "center center"
+    },
+    {
+      src: "/images/photos/IMG-20250714-WA0160.jpg",
+      alt: "Art Scope Enterprises - Creative Innovation Hub",
+      position: "center center"
     }
   ];
 
@@ -141,6 +146,8 @@ function Home() {
         images={heroImages} 
         interval={4000}
         className="min-h-screen flex items-center"
+        objectFit="cover"
+        objectPosition="center center"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <div className="max-w-4xl mx-auto text-center text-white">
@@ -210,7 +217,7 @@ function Home() {
             <div className="mb-16">
               <div className="relative h-80 sm:h-96 rounded-2xl shadow-2xl overflow-hidden">
                 <Image
-                  src="/images/photos/IMG-20250714-WA0129.jpg"
+                  src="/images/photos/IMG-20250714-WA0133.jpg"
                   alt="Art Scope Operations Overview - Team and Business Activities"
                   fill
                   className="object-cover object-center"
@@ -317,7 +324,7 @@ function Home() {
             <div className="mb-12">
               <div className="relative h-80 sm:h-96 rounded-2xl overflow-hidden border border-yellow/20 shadow-2xl">
                 <Image
-                  src="/images/photos/IMG-20250714-WA0145.jpg"
+                  src="/images/photos/IMG-20250714-WA0156.jpg"
                   alt="Art Scope Success Stories - Creative Journey Achievements"
                   fill
                   className="object-cover object-center"

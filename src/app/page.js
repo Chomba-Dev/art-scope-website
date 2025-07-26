@@ -1,4 +1,5 @@
-import HeroSection from "@/components/HeroSection";
+import Image from "next/image";
+import HeroCarousel from "@/components/HeroCarousel";
 import SubsidiaryCard from "@/components/SubsidiaryCard";
 import EventCard from "@/components/EventCard";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -109,10 +110,79 @@ function Home() {
     }
   ];
 
+  // Hero carousel images
+  const heroImages = [
+    {
+      src: "/images/photos/IMG-20250714-WA0129.jpg",
+      alt: "Art Scope Enterprises - Creative Innovation Hub"
+    },
+    {
+      src: "/images/photos/IMG-20250714-WA0145.jpg", 
+      alt: "Empowering Artists and Creatives Across Africa"
+    },
+    {
+      src: "/images/photos/IMG-20250714-WA0167.jpg",
+      alt: "Sustainable Development Through Arts and Culture"
+    },
+    {
+      src: "/images/photos/IMG-20250714-WA0168.jpg",
+      alt: "Youth Empowerment and Creative Excellence"
+    },
+    {
+      src: "/images/photos/IMG-20250714-WA0169.jpg",
+      alt: "Leading African Hub for Creative Innovation"
+    }
+  ];
+
   return (
     <>
-      {/* Hero Section */}
-      <HeroSection />
+      {/* Dynamic Hero Section with Rotating Images */}
+      <HeroCarousel 
+        images={heroImages} 
+        interval={4000}
+        className="min-h-screen flex items-center"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+          <div className="max-w-4xl mx-auto text-center text-white">
+            {/* Company Badge */}
+            <div className="inline-flex items-center px-6 py-3 bg-navy/80 border border-yellow/50 rounded-full mb-8 backdrop-blur-md">
+              <span className="text-yellow font-semibold text-sm tracking-wide uppercase">
+                Art Scope Enterprises Limited
+              </span>
+            </div>
+            
+            <h1 className="text-5xl sm:text-7xl font-bold mb-8 text-white drop-shadow-2xl leading-tight">
+              Empowering Artists and Creatives
+            </h1>
+            
+            <p className="text-2xl sm:text-3xl text-yellow mb-8 font-semibold leading-tight drop-shadow-lg">
+              Leading African Hub for Creative Innovation
+            </p>
+            
+            <p className="text-xl text-white/95 max-w-3xl mx-auto leading-relaxed font-medium mb-12 drop-shadow-md">
+              We unleash creative potential for sustainable development through arts, culture, 
+              technology, and business integration across emerging markets.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <a href="/operations" className="group relative inline-flex items-center px-8 py-4 bg-yellow/90 hover:bg-yellow text-navy font-bold text-lg rounded-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <span className="mr-3">Explore Our Operations</span>
+                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </a>
+              
+              <a href="/contact" className="group inline-flex items-center px-8 py-4 bg-navy/70 hover:bg-navy/90 border-2 border-yellow text-yellow font-bold text-lg rounded-xl transition-all duration-300 backdrop-blur-md">
+                <span className="mr-3">Get Started</span>
+                <svg className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </HeroCarousel>
 
       {/* Our Operations Section - Enhanced */}
       <section className="section-padding bg-gradient-to-br from-yellow via-yellow to-amber-300 relative overflow-hidden">
@@ -135,14 +205,22 @@ function Home() {
             </div>
           </ScrollReveal>
 
-          {/* Operations Image Placeholder */}
+          {/* Operations Overview Image */}
           <ScrollReveal animation="scale" delay={1}>
             <div className="mb-16">
-              <div className="image-placeholder h-64 rounded-2xl shadow-2xl">
-                <div className="text-center">
-                  <div className="text-5xl mb-4">🏭</div>
-                  <h3 className="text-xl font-bold mb-2">Our Operations Overview</h3>
-                  <p className="text-sm">Visual representation of our 10 active subsidiaries and their integration</p>
+              <div className="relative h-80 sm:h-96 rounded-2xl shadow-2xl overflow-hidden">
+                <Image
+                  src="/images/photos/IMG-20250714-WA0129.jpg"
+                  alt="Art Scope Operations Overview - Team and Business Activities"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/30 to-transparent flex items-end justify-center">
+                  <div className="text-center text-white p-6 pb-8">
+                    <h3 className="text-2xl font-bold mb-3 drop-shadow-lg">Our Operations Overview</h3>
+                    <p className="text-base drop-shadow-md opacity-90">Visual representation of our 10 active subsidiaries and their integration</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -234,14 +312,23 @@ function Home() {
             </div>
           </ScrollReveal>
           
-          {/* CTA Image Placeholder */}
+          {/* Success Stories Image */}
           <ScrollReveal animation="scale" delay={1}>
             <div className="mb-12">
-              <div className="image-placeholder h-48 rounded-2xl bg-white/10 backdrop-blur-sm border border-yellow/20">
-                <div className="text-center">
-                  <div className="text-5xl mb-4">🚀</div>
-                  <h3 className="text-xl font-bold text-white mb-2">Launch Your Creative Journey</h3>
-                  <p className="text-sm text-yellow">Success stories from our community</p>
+              <div className="relative h-80 sm:h-96 rounded-2xl overflow-hidden border border-yellow/20 shadow-2xl">
+                <Image
+                  src="/images/photos/IMG-20250714-WA0145.jpg"
+                  alt="Art Scope Success Stories - Creative Journey Achievements"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/40 to-transparent flex items-center justify-center">
+                  <div className="text-center text-white p-6">
+                    <div className="text-5xl mb-4">🚀</div>
+                    <h3 className="text-2xl font-bold mb-3 drop-shadow-lg">Launch Your Creative Journey</h3>
+                    <p className="text-base text-yellow drop-shadow-md">Success stories from our community</p>
+                  </div>
                 </div>
               </div>
             </div>

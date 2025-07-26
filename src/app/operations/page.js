@@ -1,3 +1,5 @@
+import Image from "next/image";
+import HeroCarousel from "../../components/HeroCarousel";
 import SubsidiaryCard from '../../components/SubsidiaryCard';
 
 export const metadata = {
@@ -89,42 +91,70 @@ export default function Operations() {
     }
   ];
 
+  // Hero carousel images
+  const heroImages = [
+    {
+      src: "/images/photos/IMG-20250714-WA0131.jpg",
+      alt: "Operations Hub - Business Management Center"
+    },
+    {
+      src: "/images/photos/IMG-20250714-WA0132.jpg", 
+      alt: "Innovation and Technology Operations"
+    },
+    {
+      src: "/images/photos/IMG-20250714-WA0133.jpg",
+      alt: "Sustainable Business Practices"
+    },
+    {
+      src: "/images/photos/IMG-20250714-WA0134.jpg",
+      alt: "Creative Excellence and Operations"
+    }
+  ];
+
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-navy via-blue-900 to-navy text-white py-24 overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 text-6xl">🏢</div>
-          <div className="absolute top-20 right-20 text-4xl">⚙️</div>
-          <div className="absolute bottom-20 left-20 text-5xl">📊</div>
-          <div className="absolute bottom-10 right-10 text-6xl">🚀</div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center">
-            <div className="image-placeholder w-32 h-32 mx-auto mb-8 rounded-full">
-              <div className="text-center">
-                <div className="text-6xl mb-2">🏭</div>
-                <p className="text-sm font-bold">Operations Hub</p>
-              </div>
+      {/* Dynamic Hero Section */}
+      <HeroCarousel 
+        images={heroImages} 
+        interval={3000}
+        className="py-32"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center text-white">
+            {/* Company Badge */}
+            <div className="inline-flex items-center px-6 py-3 bg-navy/80 border border-yellow/50 rounded-full mb-8 backdrop-blur-md">
+              <span className="text-yellow font-semibold text-sm tracking-wide uppercase">
+                Business Operations
+              </span>
             </div>
-            <h1 className="text-4xl sm:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-yellow to-white bg-clip-text text-transparent">
+            
+            <h1 className="text-4xl sm:text-6xl font-bold mb-8 text-white drop-shadow-2xl leading-tight">
               Our Operations
             </h1>
-            <p className="text-xl sm:text-2xl text-yellow mb-8 font-semibold max-w-4xl mx-auto">
+            
+            <p className="text-xl sm:text-2xl text-yellow mb-8 font-semibold max-w-4xl mx-auto leading-relaxed drop-shadow-lg">
               Discover our diverse portfolio of subsidiaries and business units
             </p>
-            <p className="text-lg font-medium max-w-4xl mx-auto text-white/90 leading-relaxed">
+            
+            <p className="text-lg font-medium max-w-4xl mx-auto text-white/95 leading-relaxed mb-12 drop-shadow-md">
               Art Scope Enterprises operates across multiple sectors, delivering 
               innovative solutions and exceptional value through our specialized subsidiaries.
             </p>
+            
+            <div className="flex justify-center">
+              <a href="#subsidiaries" className="group inline-flex items-center px-8 py-4 bg-yellow/90 hover:bg-yellow text-navy font-bold text-lg rounded-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <span className="mr-3">Explore Subsidiaries</span>
+                <svg className="w-5 h-5 group-hover:translate-y-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
-      </section>
+      </HeroCarousel>
 
       {/* Overview Section */}
-      <section className="py-20 bg-gradient-to-r from-yellow via-yellow to-amber-400">
+      <section id="subsidiaries" className="py-20 bg-gradient-to-r from-yellow via-yellow to-amber-400">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold text-navy mb-6">
@@ -183,11 +213,14 @@ export default function Operations() {
       {/* Call to Action */}
       <section className="py-20 bg-gradient-to-r from-navy via-blue-900 to-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="image-placeholder w-24 h-24 mx-auto mb-8 rounded-full">
-            <div className="text-center">
-              <div className="text-4xl mb-1">🤝</div>
-              <p className="text-xs font-bold">Partnership</p>
-            </div>
+          <div className="relative w-24 h-24 mx-auto mb-8 rounded-full overflow-hidden">
+            <Image
+              src="/images/photos/IMG-20250714-WA0162.jpg"
+              alt="Partnership Opportunities - Collaboration and Growth"
+              fill
+              className="object-cover"
+              sizes="96px"
+            />
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold text-yellow mb-6">
             Ready to Partner With Us?

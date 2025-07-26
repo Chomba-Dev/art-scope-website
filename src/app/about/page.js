@@ -1,4 +1,6 @@
+import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
+import HeroCarousel from "@/components/HeroCarousel";
 
 export const metadata = {
   title: "About Us - Art Scope Enterprises Limited",
@@ -39,38 +41,65 @@ export default function About() {
     }
   ];
 
+  // Hero carousel images
+  const heroImages = [
+    {
+      src: "/images/photos/IMG-20250714-WA0130.jpg",
+      alt: "Art Scope Enterprises - Company Identity and Leadership"
+    },
+    {
+      src: "/images/photos/IMG-20250714-WA0131.jpg", 
+      alt: "Our Mission - Empowering Creative Communities"
+    },
+    {
+      src: "/images/photos/IMG-20250714-WA0132.jpg",
+      alt: "Our Vision - Leading African Creative Innovation Hub"
+    },
+    {
+      src: "/images/photos/IMG-20250714-WA0133.jpg",
+      alt: "Our Values - Creativity, Integrity, and Excellence"
+    }
+  ];
+
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-navy via-blue-900 to-navy text-white py-24 overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 text-6xl">🎨</div>
-          <div className="absolute top-20 right-20 text-4xl">🚀</div>
-          <div className="absolute bottom-20 left-20 text-5xl">⭐</div>
-          <div className="absolute bottom-10 right-10 text-6xl">🌍</div>
-        </div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center">
-            <div className="image-placeholder w-32 h-32 mx-auto mb-8 rounded-full">
-              <div className="text-center">
-                <div className="text-6xl mb-2">🏢</div>
-                <p className="text-sm font-bold">Company Logo</p>
-              </div>
+      {/* Dynamic Hero Section */}
+      <HeroCarousel 
+        images={heroImages} 
+        interval={3500}
+        className="py-32"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center text-white">
+            {/* Company Badge */}
+            <div className="inline-flex items-center px-6 py-3 bg-navy/80 border border-yellow/50 rounded-full mb-8 backdrop-blur-md">
+              <span className="text-yellow font-semibold text-sm tracking-wide uppercase">
+                About Art Scope Enterprises
+              </span>
             </div>
-            <h1 className="text-4xl sm:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-yellow to-white bg-clip-text text-transparent">
+            
+            <h1 className="text-4xl sm:text-6xl font-bold mb-8 text-white drop-shadow-2xl leading-tight">
               About Art Scope Enterprises Limited
             </h1>
-            <p className="text-xl sm:text-2xl text-yellow max-w-4xl mx-auto leading-relaxed">
+            
+            <p className="text-xl sm:text-2xl text-yellow max-w-4xl mx-auto leading-relaxed font-semibold drop-shadow-lg">
               Empowering Artists and Creatives across Africa through innovation, integration, and sustainable entrepreneurship.
             </p>
+            
+            <div className="mt-12 flex justify-center">
+              <a href="#mission" className="group inline-flex items-center px-8 py-4 bg-yellow/90 hover:bg-yellow text-navy font-bold text-lg rounded-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <span className="mr-3">Learn More</span>
+                <svg className="w-5 h-5 group-hover:translate-y-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
-      </section>
+      </HeroCarousel>
 
       {/* Mission & Vision Section */}
-      <section className="py-24 bg-gradient-to-r from-yellow via-yellow to-amber-400">
+      <section id="mission" className="py-24 bg-gradient-to-r from-yellow via-yellow to-amber-400">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="card-primary bg-navy p-10 border-4 border-yellow shadow-2xl transform hover:scale-105 transition-transform duration-300">
@@ -283,33 +312,78 @@ export default function About() {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-24 bg-gradient-to-r from-white via-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="image-placeholder w-24 h-24 mx-auto mb-8 rounded-full">
-            <div className="text-center">
-              <div className="text-4xl mb-1">📞</div>
-              <p className="text-xs font-bold">Contact Icon</p>
-            </div>
+      {/* Professional Call to Action with Background */}
+      <section className="relative py-32 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/photos/IMG-20250714-WA0160.jpg"
+            alt="Art Scope Enterprises - Ready to Learn More"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
+          {/* Professional Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-navy/90 via-navy/80 to-blue-900/90"></div>
+          
+          {/* Decorative Elements */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-20 left-20 w-32 h-32 border border-yellow rounded-full"></div>
+            <div className="absolute top-40 right-32 w-24 h-24 border border-yellow rounded-full"></div>
+            <div className="absolute bottom-32 left-32 w-20 h-20 border border-yellow rounded-full"></div>
+            <div className="absolute bottom-20 right-20 w-28 h-28 border border-yellow rounded-full"></div>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-black mb-6">Ready to Learn More?</h2>
-          <p className="text-xl text-black/80 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Discover how Art Scope Enterprises Limited is transforming the creative landscape
-            and creating opportunities for sustainable growth and development.
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          {/* Professional Icon */}
+          <div className="w-20 h-20 bg-gradient-to-br from-yellow to-amber-400 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-2xl">
+            <svg className="w-10 h-10 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          
+          <h2 className="text-4xl sm:text-6xl font-bold mb-8 bg-gradient-to-r from-white via-yellow to-white bg-clip-text text-transparent">
+            Ready to Learn More?
+          </h2>
+          
+          <p className="text-xl sm:text-2xl text-yellow/90 mb-8 font-semibold leading-tight">
+            Transform Your Creative Vision Into Reality
           </p>
+          
+          <p className="text-lg text-white/80 mb-16 max-w-4xl mx-auto leading-relaxed">
+            Discover how Art Scope Enterprises Limited is transforming the creative landscape,
+            empowering artists, and creating sustainable opportunities for growth and development across Africa.
+          </p>
+          
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <a href="/operations" className="btn-primary px-10 py-4 text-lg font-bold inline-flex items-center space-x-2 group">
-              <span>View Our Operations</span>
+            <a href="/operations" className="group relative inline-flex items-center px-10 py-4 bg-gradient-to-r from-yellow to-amber-400 text-navy font-bold text-lg rounded-xl transition-all duration-300 hover:shadow-2xl hover:shadow-yellow/25 hover:-translate-y-1">
+              <span className="mr-3">View Our Operations</span>
               <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
               </svg>
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-amber-300 to-yellow-300 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
             </a>
-            <a href="/contact" className="btn-secondary px-10 py-4 text-lg font-bold inline-flex items-center space-x-2 group">
-              <span>Contact Us</span>
-              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            
+            <a href="/contact" className="group inline-flex items-center px-10 py-4 border-2 border-yellow text-yellow font-bold text-lg rounded-xl transition-all duration-300 hover:bg-yellow hover:text-navy">
+              <span className="mr-3">Contact Us</span>
+              <svg className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
               </svg>
             </a>
+          </div>
+          
+          {/* Trust Indicators */}
+          <div className="mt-16 pt-8 border-t border-yellow/20">
+            <p className="text-yellow/70 text-sm mb-4 uppercase tracking-wide font-semibold">Empowering Creativity Across Africa</p>
+            <div className="flex flex-wrap justify-center items-center gap-8 text-white/60">
+              <span className="text-sm font-medium">Creative Innovation</span>
+              <span className="w-1 h-1 bg-yellow/50 rounded-full"></span>
+              <span className="text-sm font-medium">Youth Empowerment</span>
+              <span className="w-1 h-1 bg-yellow/50 rounded-full"></span>
+              <span className="text-sm font-medium">Sustainable Development</span>
+            </div>
           </div>
         </div>
       </section>

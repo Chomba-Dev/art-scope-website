@@ -1,3 +1,5 @@
+import Image from "next/image";
+import HeroCarousel from '../../components/HeroCarousel';
 import EventCard from '../../components/EventCard';
 
 export const metadata = {
@@ -102,41 +104,69 @@ export default function Events() {
     }
   ];
 
+  // Hero carousel images with correct paths
+  const heroImages = [
+    {
+      src: "/images/photos/IMG-20250714-WA0132.jpg",
+      alt: "Events Hub - Celebrations and Gatherings"
+    },
+    {
+      src: "/images/photos/IMG-20250714-WA0133.jpg", 
+      alt: "Creative Community Events and Workshops"
+    },
+    {
+      src: "/images/photos/IMG-20250714-WA0134.jpg",
+      alt: "Professional Networking and Development"
+    },
+    {
+      src: "/images/photos/IMG-20250714-WA0135.jpg",
+      alt: "Innovation Showcases and Exhibitions"
+    }
+  ];
+
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-navy via-blue-900 to-navy text-white py-24 overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 text-6xl">🎉</div>
-          <div className="absolute top-20 right-20 text-4xl">📅</div>
-          <div className="absolute bottom-20 left-20 text-5xl">📰</div>
-          <div className="absolute bottom-10 right-10 text-6xl">🎪</div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center">
-            <div className="image-placeholder w-32 h-32 mx-auto mb-8 rounded-full">
-              <div className="text-center">
-                <div className="text-6xl mb-2">🎭</div>
-                <p className="text-sm font-bold">Events Hub</p>
-              </div>
+      {/* Dynamic Hero Section */}
+      <HeroCarousel 
+        images={heroImages} 
+        interval={3500}
+        className="py-32"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center text-white">
+            {/* Company Badge */}
+            <div className="inline-flex items-center px-6 py-3 bg-navy/80 border border-yellow/50 rounded-full mb-8 backdrop-blur-md">
+              <span className="text-yellow font-semibold text-sm tracking-wide uppercase">
+                Events & News
+              </span>
             </div>
-            <h1 className="text-4xl sm:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-yellow to-white bg-clip-text text-transparent">
+            
+            <h1 className="text-4xl sm:text-6xl font-bold mb-8 text-white drop-shadow-2xl leading-tight">
               Events & News
             </h1>
-            <p className="text-xl sm:text-2xl text-yellow mb-8 font-semibold max-w-4xl mx-auto">
+            
+            <p className="text-xl sm:text-2xl text-yellow mb-8 font-semibold max-w-4xl mx-auto leading-relaxed drop-shadow-lg">
               Stay updated with our latest events, announcements, and industry insights
             </p>
-            <p className="text-lg font-medium max-w-3xl mx-auto text-white/90 leading-relaxed">
+            
+            <p className="text-lg font-medium max-w-3xl mx-auto text-white/95 leading-relaxed mb-12 drop-shadow-md">
               Discover upcoming events, celebrate achievements, and stay informed about our journey in transforming the creative landscape.
             </p>
+            
+            <div className="flex justify-center">
+              <a href="#events" className="group inline-flex items-center px-8 py-4 bg-yellow/90 hover:bg-yellow text-navy font-bold text-lg rounded-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1 backdrop-blur-sm">
+                <span className="mr-3">View Events</span>
+                <svg className="w-5 h-5 group-hover:translate-y-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
-      </section>
+      </HeroCarousel>
 
       {/* Filter Tabs */}
-      <section className="py-12 bg-gradient-to-r from-yellow via-yellow to-amber-400">
+      <section id="events" className="py-12 bg-gradient-to-r from-yellow via-yellow to-amber-400">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-6">
             <button className="btn-primary px-8 py-3 text-lg font-bold">
@@ -225,11 +255,14 @@ export default function Events() {
       <section className="py-20 bg-gradient-to-r from-yellow via-yellow to-amber-400">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="image-placeholder w-24 h-24 mx-auto mb-8 rounded-full">
-              <div className="text-center">
-                <div className="text-4xl mb-1">📧</div>
-                <p className="text-xs font-bold">Newsletter</p>
-              </div>
+            <div className="relative w-24 h-24 mx-auto mb-8 rounded-full overflow-hidden">
+              <Image
+                src="/images/photos/IMG-20250714-WA0163.jpg"
+                alt="Newsletter Subscription - Stay Connected"
+                fill
+                className="object-cover"
+                sizes="96px"
+              />
             </div>
             <h2 className="text-4xl sm:text-5xl font-bold text-navy mb-6">
               Stay Informed

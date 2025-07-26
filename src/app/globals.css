@@ -663,9 +663,22 @@ section[class*="bg-white"] div:not(.text-yellow):not(.text-navy):not(.text-white
   background-color: #FFD700 !important;
   border: 2px solid #000f3d !important;
   cursor: pointer !important;
-  display: flex !important;
   align-items: center !important;
   justify-content: center !important;
+}
+
+/* Only show hamburger on mobile/tablet screens */
+@media (max-width: 1023px) {
+  .hamburger-button {
+    display: flex !important;
+  }
+}
+
+/* Hide hamburger on desktop screens */
+@media (min-width: 1024px) {
+  .hamburger-button {
+    display: none !important;
+  }
 }
 
 .hamburger-button:hover {
@@ -693,26 +706,6 @@ section[class*="bg-white"] div:not(.text-yellow):not(.text-navy):not(.text-white
   body {
     font-size: 16px !important;
     line-height: 1.6 !important;
-  }
-  
-  /* Mobile text contrast improvements */
-  .text-white {
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
-    color: #ffffff !important;
-  }
-  
-  .text-yellow {
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6) !important;
-    color: #FFD700 !important;
-  }
-  
-  /* Enhanced text readability on dark backgrounds */
-  .bg-gradient-primary .text-white,
-  .bg-navy .text-white,
-  section[class*="bg-gradient-primary"] .text-white,
-  section[class*="bg-navy"] .text-white {
-    color: #ffffff !important;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
   }
   
   /* Ensure headings are properly sized on mobile */
@@ -783,14 +776,6 @@ section[class*="bg-white"] div:not(.text-yellow):not(.text-navy):not(.text-white
   .card-primary {
     padding: 1.5rem !important;
     margin-bottom: 1rem !important;
-  }
-  
-  /* Mobile text improvements for white backgrounds */
-  section[class*="bg-white"] p,
-  section[class*="bg-white"] span,
-  section[class*="bg-white"] div {
-    color: #1f2937 !important;
-    font-weight: 500 !important;
   }
   
   /* Ensure footer keeps dark background on mobile */

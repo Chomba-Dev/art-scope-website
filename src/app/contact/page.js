@@ -1,3 +1,5 @@
+import Image from "next/image";
+import HeroCarousel from "@/components/HeroCarousel";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
@@ -6,41 +8,69 @@ export const metadata = {
 };
 
 export default function Contact() {
+  // Hero carousel images with correct paths
+  const heroImages = [
+    {
+      src: "/images/photos/IMG-20250714-WA0133.jpg",
+      alt: "Contact Hub - Communication Center"
+    },
+    {
+      src: "/images/photos/IMG-20250714-WA0160.jpg", 
+      alt: "Professional Communication and Support"
+    },
+    {
+      src: "/images/photos/IMG-20250714-WA0161.jpg",
+      alt: "Partnership and Collaboration Opportunities"
+    },
+    {
+      src: "/images/photos/IMG-20250714-WA0162.jpg",
+      alt: "Client Service and Business Development"
+    }
+  ];
+
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-navy via-blue-900 to-navy text-white py-24 overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 text-6xl">📞</div>
-          <div className="absolute top-20 right-20 text-4xl">✉️</div>
-          <div className="absolute bottom-20 left-20 text-5xl">🏢</div>
-          <div className="absolute bottom-10 right-10 text-6xl">🗺️</div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center">
-            <div className="image-placeholder w-32 h-32 mx-auto mb-8 rounded-full">
-              <div className="text-center">
-                <div className="text-6xl mb-2">💬</div>
-                <p className="text-sm font-bold">Contact Hub</p>
-              </div>
+      {/* Dynamic Hero Section */}
+      <HeroCarousel 
+        images={heroImages} 
+        interval={4000}
+        className="py-32"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center text-white">
+            {/* Company Badge */}
+            <div className="inline-flex items-center px-6 py-3 bg-navy/80 border border-yellow/50 rounded-full mb-8 backdrop-blur-md">
+              <span className="text-yellow font-semibold text-sm tracking-wide uppercase">
+                Contact Art Scope
+              </span>
             </div>
-            <h1 className="text-4xl sm:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-yellow to-white bg-clip-text text-transparent">
+            
+            <h1 className="text-4xl sm:text-6xl font-bold mb-8 text-white drop-shadow-2xl leading-tight">
               Contact Us
             </h1>
-            <p className="text-xl sm:text-2xl text-yellow mb-8 font-semibold max-w-4xl mx-auto">
+            
+            <p className="text-xl sm:text-2xl text-yellow mb-8 font-semibold max-w-4xl mx-auto leading-relaxed drop-shadow-lg">
               Ready to collaborate or learn more about our services? We're here to help you unleash your creative potential.
             </p>
-            <p className="text-lg font-medium max-w-3xl mx-auto text-white/90 leading-relaxed">
+            
+            <p className="text-lg font-medium max-w-3xl mx-auto text-white/95 leading-relaxed mb-12 drop-shadow-md">
               Whether you're an artist, entrepreneur, investor, or partner, we'd love to hear from you and explore how we can work together.
             </p>
+            
+            <div className="flex justify-center">
+              <a href="#contact-form" className="group inline-flex items-center px-8 py-4 bg-yellow/90 hover:bg-yellow text-navy font-bold text-lg rounded-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <span className="mr-3">Get In Touch</span>
+                <svg className="w-5 h-5 group-hover:translate-y-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
-      </section>
+      </HeroCarousel>
 
       {/* Contact Form & Info Section */}
-      <section className="py-20 bg-gradient-to-br from-yellow via-yellow to-amber-300 relative overflow-hidden">
+      <section id="contact-form" className="py-20 bg-gradient-to-br from-yellow via-yellow to-amber-300 relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-32 h-32 bg-navy rounded-full animate-float"></div>
@@ -224,22 +254,31 @@ export default function Contact() {
           </div>
           
           {/* Map placeholder */}
-          <div className="image-placeholder h-96 rounded-2xl shadow-2xl">
-            <div className="text-center">
-              <div className="text-6xl mb-6">🗺️</div>
-              <h3 className="text-2xl font-bold mb-4">Interactive Map</h3>
-              <p className="text-lg mb-6">Map integration coming soon</p>
-              <p className="font-medium">
-                📍 Plot No. 1132, Olipa Banda, Kanyama Site and Service<br />
-                Lusaka, Zambia
-              </p>
-              <div className="mt-8">
-                <button className="btn-primary px-8 py-3 text-lg font-bold inline-flex items-center space-x-2">
-                  <span>Get Directions</span>
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                  </svg>
-                </button>
+          <div className="relative h-96 rounded-2xl shadow-2xl overflow-hidden">
+            <Image
+              src="/images/photos/IMG-20250714-WA0164.jpg"
+              alt="Our Location - Lusaka Office and Business Center"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+            />
+            <div className="absolute inset-0 bg-navy/60 flex items-center justify-center">
+              <div className="text-center text-white p-6">
+                <div className="text-6xl mb-6">🗺️</div>
+                <h3 className="text-2xl font-bold mb-4">Our Location</h3>
+                <p className="text-lg mb-6">Visit us at our Lusaka office</p>
+                <p className="font-medium">
+                  📍 Plot No. 1132, Olipa Banda, Kanyama Site and Service<br />
+                  Lusaka, Zambia
+                </p>
+                <div className="mt-8">
+                  <button className="btn-primary px-8 py-3 text-lg font-bold inline-flex items-center space-x-2">
+                    <span>Get Directions</span>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </div>

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function EventCard({ 
@@ -46,17 +47,28 @@ export default function EventCard({
       {/* Enhanced Image/Visual */}
       <div className="relative h-56 overflow-hidden">
         {image ? (
-          <img 
+          <Image
             src={image} 
             alt={title}
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            fill
+            className="object-cover group-hover:scale-110 transition-transform duration-500"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         ) : (
-          <div className="image-placeholder h-full">
-            <div className="text-center">
-              <div className="text-5xl mb-3">{getTypeIcon()}</div>
-              <h4 className="text-lg font-bold mb-2">{type === "news" ? "News Image" : "Event Photo"}</h4>
-              <p className="text-sm opacity-80">Visual content for {title}</p>
+          <div className="relative h-full">
+            <Image
+              src="/images/photos/IMG-20250714-WA0170.jpg"
+              alt={`${type === "news" ? "News" : "Event"}: ${title}`}
+              fill
+              className="object-cover group-hover:scale-110 transition-transform duration-500"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+            <div className="absolute inset-0 bg-navy/60 flex items-center justify-center">
+              <div className="text-center text-white p-4">
+                <div className="text-5xl mb-3">{getTypeIcon()}</div>
+                <h4 className="text-lg font-bold mb-2">{type === "news" ? "News Feature" : "Event Highlight"}</h4>
+                <p className="text-sm opacity-80">Visual content for {title}</p>
+              </div>
             </div>
           </div>
         )}

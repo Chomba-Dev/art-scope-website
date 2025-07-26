@@ -1,3 +1,6 @@
+import Image from "next/image";
+import HeroCarousel from "@/components/HeroCarousel";
+
 export const metadata = {
   title: "Partners & Investors - Art Scope Enterprises Limited",
   description: "Explore partnership opportunities with Art Scope Enterprises Limited. Join us in creating sustainable impact through strategic collaborations and investments.",
@@ -119,42 +122,70 @@ export default function Partners() {
     "Branding and Public Engagement Campaigns"
   ];
 
+  // Hero carousel images with correct paths
+  const heroImages = [
+    {
+      src: "/images/photos/IMG-20250714-WA0134.jpg",
+      alt: "Partnerships - Strategic Business Collaborations"
+    },
+    {
+      src: "/images/photos/IMG-20250714-WA0165.jpg", 
+      alt: "Investment Opportunities and Growth"
+    },
+    {
+      src: "/images/photos/IMG-20250714-WA0166.jpg",
+      alt: "Sustainable Development Partnerships"
+    },
+    {
+      src: "/images/photos/IMG-20250714-WA0167.jpg",
+      alt: "Creative Innovation and Collaboration"
+    }
+  ];
+
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-navy via-blue-900 to-navy text-white py-24 overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 text-6xl">🤝</div>
-          <div className="absolute top-20 right-20 text-4xl">💼</div>
-          <div className="absolute bottom-20 left-20 text-5xl">🌟</div>
-          <div className="absolute bottom-10 right-10 text-6xl">💰</div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center">
-            <div className="image-placeholder w-32 h-32 mx-auto mb-8 rounded-full">
-              <div className="text-center">
-                <div className="text-6xl mb-2">🏆</div>
-                <p className="text-sm font-bold">Partnerships</p>
-              </div>
+      {/* Dynamic Hero Section */}
+      <HeroCarousel 
+        images={heroImages} 
+        interval={3500}
+        className="py-32"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center text-white">
+            {/* Company Badge */}
+            <div className="inline-flex items-center px-6 py-3 bg-navy/80 border border-yellow/50 rounded-full mb-8 backdrop-blur-md">
+              <span className="text-yellow font-semibold text-sm tracking-wide uppercase">
+                Partnerships & Investment
+              </span>
             </div>
-            <h1 className="text-4xl sm:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-yellow to-white bg-clip-text text-transparent">
+            
+            <h1 className="text-4xl sm:text-6xl font-bold mb-8 text-white drop-shadow-2xl leading-tight">
               Partners & Investors
             </h1>
-            <p className="text-xl sm:text-2xl text-yellow mb-8 font-semibold max-w-4xl mx-auto">
+            
+            <p className="text-xl sm:text-2xl text-yellow mb-8 font-semibold max-w-4xl mx-auto leading-relaxed drop-shadow-lg">
               Join us in creating sustainable impact through strategic partnerships and innovative investments 
               in the creative economy.
             </p>
-            <p className="text-lg font-medium max-w-3xl mx-auto text-white/90 leading-relaxed">
+            
+            <p className="text-lg font-medium max-w-3xl mx-auto text-white/95 leading-relaxed mb-12 drop-shadow-md">
               Together, we can transform the creative landscape and build a sustainable future for artists and communities across Africa.
             </p>
+            
+            <div className="flex justify-center">
+              <a href="#partnerships" className="group inline-flex items-center px-8 py-4 bg-yellow/90 hover:bg-yellow text-navy font-bold text-lg rounded-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <span className="mr-3">Explore Opportunities</span>
+                <svg className="w-5 h-5 group-hover:translate-y-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
-      </section>
+      </HeroCarousel>
 
       {/* Target Partnership Categories */}
-      <section className="py-20 bg-white text-navy">
+      <section id="partnerships" className="py-20 bg-white text-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold text-navy mb-6">Partnership Categories</h2>
@@ -271,16 +302,31 @@ export default function Partners() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-24 bg-gradient-to-r from-white via-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="image-placeholder w-24 h-24 mx-auto mb-8 rounded-full">
-            <div className="text-center">
-              <div className="text-4xl mb-1">📞</div>
-              <p className="text-xs font-bold">Contact</p>
-            </div>
+      <section className="py-24 relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/photos/IMG-20250714-WA0166.jpg"
+            alt="Partnership Background - Collaborative Success"
+            fill
+            className="object-cover opacity-80"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-navy/40"></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="relative w-24 h-24 mx-auto mb-8 rounded-full overflow-hidden shadow-xl border-4 border-white">
+            <Image
+              src="/images/photos/IMG-20250714-WA0165.jpg"
+              alt="Contact Partnership Team - Ready to Connect"
+              fill
+              className="object-cover"
+              sizes="96px"
+            />
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-navy mb-6">Ready to Partner With Us?</h2>
-          <p className="text-xl text-navy/80 mb-12 max-w-4xl mx-auto leading-relaxed">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 drop-shadow-lg">Ready to Partner With Us?</h2>
+          <p className="text-xl text-white/95 mb-12 max-w-4xl mx-auto leading-relaxed drop-shadow-md">
             Whether you're looking to invest, collaborate, or create meaningful partnerships, 
             we're here to explore how we can work together for mutual success and social impact.
           </p>

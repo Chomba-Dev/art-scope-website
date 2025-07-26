@@ -1,3 +1,6 @@
+import Image from "next/image";
+import HeroCarousel from "@/components/HeroCarousel";
+
 export const metadata = {
   title: "Media Gallery - Art Scope Enterprises Limited",
   description: "Explore our media gallery featuring videos, images, and press releases from Art Scope Enterprises Limited and our subsidiaries.",
@@ -40,14 +43,14 @@ export default function Media() {
   ];
 
   const galleryImages = [
-    { src: "/images/gallery/lusaka-office.jpg", alt: "Lusaka Office", caption: "Our headquarters in Lusaka, Zambia" },
-    { src: "/images/gallery/creative-hub.jpg", alt: "Creative Hub", caption: "Creative hub concept design" },
-    { src: "/images/gallery/youth-program.jpg", alt: "Youth Program", caption: "Youth skills development program" },
-    { src: "/images/gallery/art-scope-farms.jpg", alt: "Organic Farm", caption: "Art Scope Farms organic agriculture" },
-    { src: "/images/gallery/tech-innovations.jpg", alt: "Technology", caption: "AI-driven art applications" },
-    { src: "/images/gallery/construction-project.jpg", alt: "Construction", caption: "Creative space construction project" },
-    { src: "/images/gallery/health-campaign.jpg", alt: "Health Initiative", caption: "Health & wellness program" },
-    { src: "/images/gallery/tourism-safari.jpg", alt: "Cultural Tourism", caption: "Creative safari experience" }
+    { src: "/images/photos/IMG-20250714-WA0171.jpg", alt: "Lusaka Office", caption: "Our headquarters in Lusaka, Zambia" },
+    { src: "/images/photos/IMG-20250714-WA0172.jpg", alt: "Creative Hub", caption: "Creative hub concept design" },
+    { src: "/images/photos/IMG-20250714-WA0173.jpg", alt: "Youth Program", caption: "Youth skills development program" },
+    { src: "/images/photos/IMG-20250714-WA0174.jpg", alt: "Organic Farm", caption: "Art Scope Farms organic agriculture" },
+    { src: "/images/photos/IMG-20250714-WA0175.jpg", alt: "Technology", caption: "AI-driven art applications" },
+    { src: "/images/photos/IMG-20250714-WA0176.jpg", alt: "Construction", caption: "Creative space construction project" },
+    { src: "/images/photos/IMG-20250714-WA0177.jpg", alt: "Health Initiative", caption: "Health & wellness program" },
+    { src: "/images/photos/IMG-20250714-WA0178.jpg", alt: "Cultural Tourism", caption: "Creative safari experience" }
   ];
 
   const pressReleases = [
@@ -73,41 +76,69 @@ export default function Media() {
     }
   ];
 
+  // Hero carousel images with correct paths
+  const heroImages = [
+    {
+      src: "/images/photos/IMG-20250714-WA0135.jpg",
+      alt: "Media Center - Content and Communications"
+    },
+    {
+      src: "/images/photos/IMG-20250714-WA0136.jpg", 
+      alt: "Creative Content Production and Media"
+    },
+    {
+      src: "/images/photos/IMG-20250714-WA0137.jpg",
+      alt: "Professional Media Services and Broadcasting"
+    },
+    {
+      src: "/images/photos/IMG-20250714-WA0166.jpg",
+      alt: "Digital Media Innovation and Storytelling"
+    }
+  ];
+
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-navy via-blue-900 to-navy text-white py-24 overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 text-6xl">📹</div>
-          <div className="absolute top-20 right-20 text-4xl">📸</div>
-          <div className="absolute bottom-20 left-20 text-5xl">🎬</div>
-          <div className="absolute bottom-10 right-10 text-6xl">📺</div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center">
-            <div className="image-placeholder w-32 h-32 mx-auto mb-8 rounded-full">
-              <div className="text-center">
-                <div className="text-6xl mb-2">🎭</div>
-                <p className="text-sm font-bold">Media Center</p>
-              </div>
+      {/* Dynamic Hero Section */}
+      <HeroCarousel 
+        images={heroImages} 
+        interval={3000}
+        className="py-32"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center text-white">
+            {/* Company Badge */}
+            <div className="inline-flex items-center px-6 py-3 bg-navy/80 border border-yellow/50 rounded-full mb-8 backdrop-blur-md">
+              <span className="text-yellow font-semibold text-sm tracking-wide uppercase">
+                Media & Content
+              </span>
             </div>
-            <h1 className="text-4xl sm:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-yellow to-white bg-clip-text text-transparent">
+            
+            <h1 className="text-4xl sm:text-6xl font-bold mb-8 text-white drop-shadow-2xl leading-tight">
               Media Center
             </h1>
-            <p className="text-xl sm:text-2xl text-yellow mb-8 font-semibold max-w-4xl mx-auto">
+            
+            <p className="text-xl sm:text-2xl text-yellow mb-8 font-semibold max-w-4xl mx-auto leading-relaxed drop-shadow-lg">
               Explore our multimedia content, press releases, and visual stories
             </p>
-            <p className="text-lg font-medium max-w-3xl mx-auto text-white/90 leading-relaxed">
+            
+            <p className="text-lg font-medium max-w-3xl mx-auto text-white/95 leading-relaxed mb-12 drop-shadow-md">
               Discover our journey through videos, images, and press materials that showcase our impact in transforming the creative landscape.
             </p>
+            
+            <div className="flex justify-center">
+              <a href="#media-gallery" className="group inline-flex items-center px-8 py-4 bg-yellow/90 hover:bg-yellow text-navy font-bold text-lg rounded-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <span className="mr-3">View Media Gallery</span>
+                <svg className="w-5 h-5 group-hover:translate-y-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
-      </section>
+      </HeroCarousel>
 
       {/* Media Navigation */}
-      <section className="py-12 bg-gradient-to-r from-yellow via-yellow to-amber-400">
+      <section id="media-gallery" className="py-12 bg-gradient-to-r from-yellow via-yellow to-amber-400">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-6">
             <button className="btn-primary px-8 py-3 text-lg font-bold">
@@ -144,12 +175,14 @@ export default function Media() {
             {mediaItems.slice(0, 2).map((item, index) => (
               <div key={index} className="card-primary card-hover group">
                 <div className="relative overflow-hidden rounded-t-xl">
-                  <div className="image-placeholder h-64">
-                    <div className="text-center">
-                      <div className="text-6xl mb-4">🎬</div>
-                      <h4 className="text-lg font-bold mb-2">Video Thumbnail</h4>
-                      <p className="text-sm">High-quality video content</p>
-                    </div>
+                  <div className="relative h-64">
+                    <Image
+                      src="/images/photos/IMG-20250714-WA0136.jpg"
+                      alt={`Video: ${item.title}`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
                   </div>
                   <div className="absolute inset-0 bg-navy/20 group-hover:bg-navy/40 transition-colors duration-300 flex items-center justify-center">
                     <div className="w-16 h-16 bg-yellow rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -184,11 +217,14 @@ export default function Media() {
               {mediaItems.slice(2).map((item, index) => (
                 <div key={index} className="card-primary card-hover group">
                   <div className="relative overflow-hidden rounded-t-xl">
-                    <div className="image-placeholder h-40">
-                      <div className="text-center">
-                        <div className="text-4xl mb-2">🎥</div>
-                        <p className="text-sm font-bold">Video</p>
-                      </div>
+                    <div className="relative h-40">
+                      <Image
+                        src="/images/photos/IMG-20250714-WA0137.jpg"
+                        alt={`Video: ${item.title}`}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                      />
                     </div>
                     <div className="absolute inset-0 bg-navy/20 group-hover:bg-navy/40 transition-colors duration-300 flex items-center justify-center">
                       <div className="w-12 h-12 bg-yellow rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -227,12 +263,14 @@ export default function Media() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {galleryImages.map((image, index) => (
               <div key={index} className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all card-hover">
-                <div className="image-placeholder h-48">
-                  <div className="text-center">
-                    <div className="text-4xl mb-2">🖼️</div>
-                    <p className="text-sm font-bold">Gallery Image</p>
-                    <p className="text-xs opacity-80">{image.caption}</p>
-                  </div>
+                <div className="relative h-48">
+                  <Image
+                    src={`/images/photos/IMG-20250714-WA0${138 + index}.jpg`}
+                    alt={image.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                  />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-4 left-4 right-4 text-white">
@@ -303,11 +341,14 @@ export default function Media() {
       <section className="py-20 bg-gradient-to-r from-yellow via-yellow to-amber-400">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="image-placeholder w-24 h-24 mx-auto mb-8 rounded-full">
-              <div className="text-center">
-                <div className="text-4xl mb-1">📎</div>
-                <p className="text-xs font-bold">Media Kit</p>
-              </div>
+            <div className="relative w-24 h-24 mx-auto mb-8 rounded-full overflow-hidden">
+              <Image
+                src="/images/photos/IMG-20250714-WA0166.jpg"
+                alt="Media Kit Resources - Brand Assets and Downloads"
+                fill
+                className="object-cover"
+                sizes="96px"
+              />
             </div>
             <h2 className="text-4xl sm:text-5xl font-bold text-navy mb-6">
               Media Kit & Resources
